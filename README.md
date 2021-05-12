@@ -4,3 +4,8 @@ The Dungeon Crawl Classics Empire of the East Zero Level Character Generator has
 Initial commit: 2021-05-10
 
 The initial commit for the Dungeon Crawl Classics Empire of the East Zero-Level Character Generator.
+
+
+Update 1.01: 2021-05-12
+
+Updates to levelZeroCharacter.php, zeroLvOccupation.php and dcc_level_zero_characters.css.  Deleted occupations.js. 
