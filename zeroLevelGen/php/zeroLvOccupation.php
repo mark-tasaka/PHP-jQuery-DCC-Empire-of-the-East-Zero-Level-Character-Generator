@@ -68,11 +68,210 @@ function getOccupationArray($input)
         $occupationArray = array();
         $occupationNum = 0;
 
-        if($input >= 0)
+        if($input == 0)
         {
                 $occupationNum = 0;
-                $occupationArray = getOccupation($occupationNum);
         }
+
+        if($input == 1)
+        {
+                $occupationNum = 1;
+        }
+
+        if($input == 2)
+        {
+                $occupationNum = 2;
+        }
+
+        if($input == 3)
+        {
+                $occupationNum = 3;
+        }
+
+        if($input == 4)
+        {
+                $occupationNum = 4;
+        }
+
+        if($input == 5)
+        {
+                $occupationNum = 5;
+        }
+        
+        if($input == 6)
+        {
+                $occupationNum = 6;
+        }
+
+        if($input == 7)
+        {
+                $occupationNum = 7;
+        }
+
+        if($input == 8)
+        {
+                $occupationNum = 8;
+        }
+
+        if($input == 9)
+        {
+                $occupationNum = 9;
+        }
+
+        if($input == 10)
+        {
+                $occupationNum = 10;
+        }
+
+        if($input >= 11 && $input <= 22)
+        {
+                $occupationNum = 11;
+        }
+
+        if($input == 23)
+        {
+                $occupationNum = 12;
+        }
+
+        if($input == 24)
+        {
+                $occupationNum = 13;
+        }
+
+        if($input >= 25 && $input <= 46)
+        {
+                $occupationNum = 14;
+        }
+
+        if($input == 47)
+        {
+                $occupationNum = 15;
+        }
+
+        if($input == 48)
+        {
+                $occupationNum = 16;
+        }
+
+        if($input == 49)
+        {
+                $occupationNum = 17;
+        }
+
+        if($input == 50)
+        {
+                $occupationNum = 18;
+        }
+
+        if($input == 51)
+        {
+                $occupationNum = 19;
+        }
+
+        if($input == 52)
+        {
+                $occupationNum = 20;
+        }
+
+        if($input == 53)
+        {
+                $occupationNum = 21;
+        }
+
+        if($input == 54)
+        {
+                $occupationNum = 22;
+        }
+
+        if($input >= 55 && $input <= 59)
+        {
+                $occupationNum = 23;
+        }
+
+        if($input == 60)
+        {
+                $occupationNum = 24;
+        }
+
+        if($input >= 61 && $input <= 71)
+        {
+                $occupationNum = 25;
+        }
+
+
+        if($input == 72)
+        {
+                $occupationNum = 26;
+        }
+
+        if($input == 73)
+        {
+                $occupationNum = 27;
+        }
+
+        if($input >= 74 && $input <= 85)
+        {
+                $occupationNum = 28;
+        }
+        
+        if($input == 86)
+        {
+                $occupationNum = 29;
+        }
+
+        if($input == 87)
+        {
+                $occupationNum = 30;
+        }
+        
+        if($input == 88)
+        {
+                $occupationNum = 31;
+        }
+
+        if($input == 89)
+        {
+                $occupationNum = 32;
+        }
+        
+        if($input == 90)
+        {
+                $occupationNum = 33;
+        }
+
+        if($input == 91)
+        {
+                $occupationNum = 34;
+        }
+        
+        if($input == 92)
+        {
+                $occupationNum = 35;
+        }
+
+        if($input == 93)
+        {
+                $occupationNum = 36;
+        }
+
+        if($input >= 94 && $input <= 97)
+        {
+                $occupationNum = 37;
+        }
+
+        if($input == 98)
+        {
+                $occupationNum = 38;
+        }
+
+        if($input == 99)
+        {
+                $occupationNum = 39;
+        }
+
+
+
+        $occupationArray = getOccupation($occupationNum);
 
         return $occupationArray;
 

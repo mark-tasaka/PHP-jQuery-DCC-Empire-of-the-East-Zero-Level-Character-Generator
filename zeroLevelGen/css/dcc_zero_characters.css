@@ -322,7 +322,7 @@ Character 1
 }
 
 
-#weapons0, #weapons1, #weapons2, #weapons3{
+#weapon0, #weapon1, #weapon2, #weapon3{
     position: absolute;
     top: 280px;
     left:  230px;

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dungeon Crawl Classics Version 3 Zero Level Character Generator</title>
+<title>Dungeon Crawl Classics Empire of the East Zero Level Character Generator</title>
  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 	<meta charset="UTF-8">
-	<meta name="description" content="Dungeon Crawl Classics Zero Level Character Generator. Goodman Games.">
+	<meta name="description" content="Dungeon Crawl Classics Empire of the East Zero Level Character Generator. Goodman Games.">
 	<meta name="keywords" content="Dungeon Crawl Classics, Jim Wampler, Goodman Games,HTML5,CSS,JavaScript">
-	<meta name="author" content="Mark Tasaka 2019">
+	<meta name="author" content="Mark Tasaka 2021">
 		
 
 	<link rel="stylesheet" type="text/css" href="css/dcc_zero_characters.css">
@@ -127,6 +127,7 @@
             $dieValueAdded = 0;
         }
 
+
         $dieRollMessage = dieRollMethodText($abilityScoreGen);
 
         
@@ -159,10 +160,33 @@
         $professionNum2 = getOccupationNumber(); 
         $professionNum3 = getOccupationNumber(); 
 
-        $profession0 = getOccupationArray($professionNum0);
-        $profession1 = getOccupationArray($professionNum1);
-        $profession2 = getOccupationArray($professionNum2);
-        $profession3 = getOccupationArray($professionNum3);
+        $occupationArray0 = array();
+        $occupationArray1 = array();
+        $occupationArray2 = array();
+        $occupationArray3 = array();
+
+        $occupationArray0 = getOccupationArray($professionNum0);
+        $occupationArray1 = getOccupationArray($professionNum1);
+        $occupationArray2 = getOccupationArray($professionNum2);
+        $occupationArray3 = getOccupationArray($professionNum3);
+
+        
+        $profession0 = $occupationArray0[0];
+        $profession1 = $occupationArray1[0];
+        $profession2 = $occupationArray2[0];
+        $profession3 = $occupationArray3[0];
+
+        $trainedWeapon0 = $occupationArray0[1];
+        $trainedWeapon1 = $occupationArray1[1];
+        $trainedWeapon2 = $occupationArray2[1];
+        $trainedWeapon3 = $occupationArray3[1];
+
+        $weaponDamage0 = $occupationArray0[2];
+        $weaponDamage1 = $occupationArray1[2];
+        $weaponDamage2 = $occupationArray2[2];
+        $weaponDamage3 = $occupationArray3[2];
+
+        //$trainedWeapon0 = 
 
     ?>
 
@@ -234,6 +258,29 @@
             
             ?>
            </span>
+
+        <span id="profession0">
+           <?php
+            
+            echo $profession0;
+            
+            ?>
+        </span>
+
+        <span id="weapon0">
+           <?php
+            
+            echo $trainedWeapon0;
+            
+            ?>
+        </span>
+        <span id="weaponDamage0">
+           <?php
+            
+            echo $weaponDamage0;
+            
+            ?>
+        </span>
            
            
 		<span id="critDie0"></span>
@@ -254,7 +301,7 @@
 
            <span id="equipment0"></span>
            
-           <span id="tradeGood0"></span>
+           <!--<span id="tradeGood0"></span>-->
            
            <span id="armour0"></span>
            <span id="acBonus0"></span>
@@ -267,8 +314,8 @@
             ?> 
             </span>
 
-           <p id="notes0"><span id="raceAbility0"></span><span id="animal0"></span><span id="farmAnimal0"></span></p>
-
+           <!--<p id="notes0"><span id="raceAbility0"></span><span id="animal0"></span><span id="farmAnimal0"></span></p>
+-->
            <span id="damageBonus0"></span>
            	   
 		</aside>
@@ -333,6 +380,30 @@
             
             ?>
            </span>
+
+           
+        <span id="profession1">
+           <?php
+            
+            echo $profession1;
+            
+            ?>
+        </span>
+        
+        <span id="weapon1">
+           <?php
+            
+            echo $trainedWeapon1;
+            
+            ?>
+        </span>
+        <span id="weaponDamage1">
+           <?php
+            
+            echo $weaponDamage1;
+            
+            ?>
+        </span>
            
 		<span id="critDie1"></span>
 		<!--<span id="critTable1"></span>-->
@@ -352,7 +423,7 @@
            <span id="weaponDamage1"><span id="professionalWeaponDamage1"></span><span id="randomWeaponDamage1"><span id="randomWeaponDamageAdjustment"></span></span></span>-->
            
            <span id="equipment1"></span>
-           <span id="tradeGood1"></span>
+           <!--<span id="tradeGood1"></span>-->
            
            <span id="armour1"></span>
            <span id="acBonus1"></span>
@@ -365,7 +436,7 @@
             ?> 
             </span>
            
-           <p id="notes1"><span id="raceAbility1"></span><span id="animal1"></span><span id="farmAnimal1"></span></p>
+           <!--<p id="notes1"><span id="raceAbility1"></span><span id="animal1"></span><span id="farmAnimal1"></span></p>-->
            
            
            <span id="damageBonus1"></span>
@@ -436,6 +507,29 @@
             ?>
            </span>
            
+        <span id="profession2">
+           <?php
+            
+            echo $profession2;
+            
+            ?>
+        </span>
+        
+        <span id="weapon2">
+           <?php
+            
+            echo $trainedWeapon2;
+            
+            ?>
+        </span>
+        <span id="weaponDamage2">
+           <?php
+            
+            echo $weaponDamage2;
+            
+            ?>
+        </span>
+           
 		<span id="critDie2"></span>
            
                       
@@ -453,7 +547,7 @@
            <span id="weaponDamage2"><span id="professionalWeaponDamage2"></span><span id="randomWeaponDamage2"><span id="randomWeaponDamageAdjustment"></span></span></span>-->
            
            <span id="equipment2"></span>
-           <span id="tradeGood2"></span>
+           <!--<span id="tradeGood2"></span>-->
            
            <span id="armour2"></span>
            <span id="acBonus2"></span>
@@ -467,7 +561,7 @@
             </span>
            
            
-           <p id="notes2"><span id="raceAbility2"></span><span id="animal2"></span><span id="farmAnimal2"></span></p>
+           <!--<p id="notes2"><span id="raceAbility2"></span><span id="animal2"></span><span id="farmAnimal2"></span></p>-->
            
 		</aside>
        
@@ -532,6 +626,29 @@
             ?>
            </span>
            
+        <span id="profession3">
+           <?php
+            
+            echo $profession3;
+            
+            ?>
+        </span>
+        
+        <span id="weapon3">
+           <?php
+            
+            echo $trainedWeapon3;
+            
+            ?>
+        </span>
+        <span id="weaponDamage3">
+           <?php
+            
+            echo $weaponDamage3;
+            
+            ?>
+        </span>
+           
 		<span id="critDie3"></span>
                       
            <span id="wealth3"></span>
@@ -549,7 +666,7 @@
            <span id="weaponDamage3"><span id="professionalWeaponDamage3"></span><span id="randomWeaponDamage3"><span id="randomWeaponDamageAdjustment"></span></span></span>-->
            
            <span id="equipment3"></span>
-           <span id="tradeGood3"></span>
+           <!--<span id="tradeGood3"></span>-->
            
            <span id="armour3"></span>
            <span id="acBonus3"></span>
@@ -563,7 +680,7 @@
             </span>
            
            
-           <p id="notes3"><span id="raceAbility3"></span><span id="animal3"></span><span id="farmAnimal3"></span></p>
+           <!--<p id="notes3"><span id="raceAbility3"></span><span id="animal3"></span><span id="farmAnimal3"></span></p>-->
 
            <span id="damageBonus3"></span>
            	   
@@ -639,7 +756,7 @@
     let	personality = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
     let	intelligence = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
     let	luck = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
-	let	profession = getOccupation();
+	//let	profession = getOccupation();
 	let birthAugur = getLuckySign();
 	let strengthModifier = getStrengthModifier(strength);
 	let staminaModifier = getStaminaModifier(stamina);
@@ -647,11 +764,11 @@
 	let personalityModifier = getPersonalityModifier(personality);
 	let intelligenceModifier = getIntelligenceModifier(intelligence);
     let luckModifier = getLuckModifier(luck);
-    let species = profession.race;
-    let language = getBaseLanguages(species, intelligence, luckModifier, species);
-    let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);
+    //let species = profession.race;
+    //let language = getBaseLanguages(species, intelligence, luckModifier, species);
+   // let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);
     let randomItem = getStartingEquipment();
-    let armour = getArmour(profession);
+    //let armour = getArmour(profession);
 	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, luckModifier);
     let acBonus = getArmourProtection(armour);
 		
@@ -668,7 +785,7 @@
 			"personalityModifier": personalityModifier,
 			"intelligenceModifier": intelligenceModifier,
 			"luckModifier":  getLuckModifier(luck),
-			"profession":  profession.occupation,
+			//"profession":  profession.occupation,
 			"luckySign": birthAugur.luckySign,
 			"luckyRoll": birthAugur.luckyRoll,
             "luckySignBonus": getLuckModifier(luck),
@@ -682,20 +799,20 @@
 			"range": agilityModifier + rangeAdjust(birthAugur, getLuckModifier(luck)),
 			"rangeDamage": rangeDamageAdjust(birthAugur, getLuckModifier(luck)),
 			"critDie": "d4" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))) + "/I",
-            "baseLanguage": language,
-            "addLanguages": bonusLanguages,
-			"speed": getSpeed(species) + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
-            "professionWeapon": profession.trainedWeapon,
-            "professionWeaponDam": profession.damage,
+           // "baseLanguage": language,
+            //"addLanguages": bonusLanguages,
+			"speed": 30 + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
+            //"professionWeapon": profession.trainedWeapon,
+            //"professionWeaponDam": profession.damage,
             "startingItem": randomItem.equipment,
 			"fumbleDie": getFumbleDie (armour) + "" + addSign(adjustFumble(birthAugur, getLuckModifier(luck))),
             "armour": armour,
-            "raceTrait": addRaceAbilities(profession),
+            //"raceTrait": addRaceAbilities(profession),
             "acNoArmoured": baseAC,
             "acWithArmour": baseAC + acBonus,
-            "tradeGoods": profession.tradeGoods,
-			"animal": addAnimal (profession),
-			"farmAnimal": hasFarmAnimal (profession),
+            //"tradeGoods": profession.tradeGoods,
+			//"animal": addAnimal (profession),
+			//"farmAnimal": hasFarmAnimal (profession),
 			"wealth": Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + 5 + " cp"
 			
 		
@@ -897,7 +1014,7 @@
 	  
          
           
-          $("#profession" + index).html(data[index].profession);
+          //$("#profession" + index).html(data[index].profession);
           
           $("#strength" + index).html(data[index].strength);
           $("#strengthMod" + index).html(addModifierSign(data[index].strengthModifier));
@@ -944,27 +1061,27 @@
          // $("#critTable" + index).html(data[index].critTable);
           
           
-          $("#baseLanguage" + index).html(data[index].baseLanguage);
-          $("#addLanguages" + index).html(data[index].addLanguages);
+        //  $("#baseLanguage" + index).html(data[index].baseLanguage);
+          //$("#addLanguages" + index).html(data[index].addLanguages);
           
           $("#speed" + index).html(data[index].speed);
           
-          $("#professionWeapon" + index).html(data[index].professionWeapon);
+        //  $("#professionWeapon" + index).html(data[index].professionWeapon);
           
           $("#equipment" + index).html(data[index].startingItem);
           
-          $("#professionalWeaponDamage" + index).html(data[index].professionWeaponDam);
-          $("#randomWeaponDamage" + index).html(data[index].randomWeaponDam);
+          //$("#professionalWeaponDamage" + index).html(data[index].professionWeaponDam);
+         // $("#randomWeaponDamage" + index).html(data[index].randomWeaponDam);
           $("#armour" + index).html(data[index].armour);
           $("#acBonus" + index).html(data[index].acBonus);
           
           
 	  
-	    $("#animal" + index ).html(data[index].animal); 
-          $("#farmAnimal" + index).html(data[index].farmAnimal);
+	  //  $("#animal" + index ).html(data[index].animal); 
+        //  $("#farmAnimal" + index).html(data[index].farmAnimal);
           
-          $("#tradeGood" + index).html(data[index].tradeGoods);
-          $("#raceAbility" + index).html(data[index].raceTrait);
+         // $("#tradeGood" + index).html(data[index].tradeGoods);
+         // $("#raceAbility" + index).html(data[index].raceTrait);
           $("#wealth" + index).html(data[index].wealth);
           
           
