@@ -37,7 +37,7 @@ function diceRoll2D6Plus6()
 
 function diceRollD5D6D7()
 {
-    $ability = rand(1,5) + rand(1,6) + rand(1,6);
+    $ability = rand(1,5) + rand(1,6) + rand(1,7);
 
     return $ability;
 }

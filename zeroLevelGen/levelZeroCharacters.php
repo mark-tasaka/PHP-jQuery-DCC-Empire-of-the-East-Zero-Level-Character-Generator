@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/dcc_zero_characters.css">
     
     
-   <script type="text/javascript" src="js/occupation.js"></script>
+   <!--<script type="text/javascript" src="js/occupation.js"></script>-->
     
     <script type="text/javascript" src="js/luckySign.js"></script>
    <script type="text/javascript" src="js/adjustments.js"></script>
@@ -33,6 +33,7 @@
     include 'php/diceRoll.php';
     include 'php/message.php';
     include 'php/zeroLvOccupation.php';
+    include 'php/abilityScoreGen.php';
     
         
         if(isset($_POST["theSex"]))
@@ -81,52 +82,99 @@
         
         }
 
-        $diceSides = 0;
-        $diceRolled = 0;
-        $diceRemoved = 0;
-        $dieValueAdded = 0;
+        $abilityScoreArray0 = array();
+        $abilityScoreArray1 = array();
+        $abilityScoreArray2 = array();
+        $abilityScoreArray3 = array();
         
 
-        if($abilityScoreGen == "1")
+        for($i = 0; $i < 6; ++$i)
         {
-            $diceSides = 6;
-            $diceRolled = 3;
-            $diceRemoved = 0;
-            $dieValueAdded = 0;
+            $abilityScore = rollAbilityScores ($abilityScoreGen);
+
+            array_push($abilityScoreArray0, $abilityScore);
+
+        }       
+        
+        for($i = 0; $i < 6; ++$i)
+        {
+            $abilityScore = rollAbilityScores ($abilityScoreGen);
+
+            array_push($abilityScoreArray1, $abilityScore);
+
+        }       
+        
+        for($i = 0; $i < 6; ++$i)
+        {
+            $abilityScore = rollAbilityScores ($abilityScoreGen);
+
+            array_push($abilityScoreArray2, $abilityScore);
+
+        }       
+        
+        for($i = 0; $i < 6; ++$i)
+        {
+            $abilityScore = rollAbilityScores ($abilityScoreGen);
+
+            array_push($abilityScoreArray3, $abilityScore);
+
         }
 
-        if($abilityScoreGen == "2")
-        {
-            $diceSides = 6;
-            $diceRolled = 4;
-            $diceRemoved = 1;
-            $dieValueAdded = 0;
-        }
+        $strength0 = $abilityScoreArray0[0];
+        $agility0 = $abilityScoreArray0[1];
+        $stamina0 = $abilityScoreArray0[2];
+        $personality0 = $abilityScoreArray0[3];
+        $intelligence0 = $abilityScoreArray0[4];
+        $luck0 = $abilityScoreArray0[5];
+        
+        $strengthMod0 = getAbilityModifier($strength0);
+        $agilityMod0 = getAbilityModifier($agility0);
+        $staminaMod0 = getAbilityModifier($stamina0);
+        $personalityMod0 = getAbilityModifier($personality0);
+        $intelligenceMod0 = getAbilityModifier($intelligence0);
+        $luckMod0 = getAbilityModifier($luck0);
 
-        if($abilityScoreGen == "3")
-        {
-            $diceSides = 6;
-            $diceRolled = 2;
-            $diceRemoved = 0;
-            $dieValueAdded = 6;
-        }
-
-        if($abilityScoreGen == "4")
-        {
-            $diceSides = 10;
-            $diceRolled = 1;
-            $diceRemoved = 0;
-            $dieValueAdded = 8;
-        }
-
-        if($abilityScoreGen == "5")
-        {
-            $diceSides = 6;
-            $diceRolled = 5;
-            $diceRemoved = 2;
-            $dieValueAdded = 0;
-        }
-
+        $strength1 = $abilityScoreArray1[0];
+        $agility1 = $abilityScoreArray1[1];
+        $stamina1 = $abilityScoreArray1[2];
+        $personality1 = $abilityScoreArray1[3];
+        $intelligence1 = $abilityScoreArray1[4];
+        $luck1 = $abilityScoreArray1[5];
+        
+        $strengthMod1 = getAbilityModifier($strength1);
+        $agilityMod1 = getAbilityModifier($agility1);
+        $staminaMod1 = getAbilityModifier($stamina1);
+        $personalityMod1 = getAbilityModifier($personality1);
+        $intelligenceMod1 = getAbilityModifier($intelligence1);
+        $luckMod1 = getAbilityModifier($luck1);
+        
+        $strength2 = $abilityScoreArray2[0];
+        $agility2 = $abilityScoreArray2[1];
+        $stamina2 = $abilityScoreArray2[2];
+        $personality2 = $abilityScoreArray2[3];
+        $intelligence2 = $abilityScoreArray2[4];
+        $luck2 = $abilityScoreArray2[5];
+        
+        $strengthMod2 = getAbilityModifier($strength2);
+        $agilityMod2 = getAbilityModifier($agility2);
+        $staminaMod2 = getAbilityModifier($stamina2);
+        $personalityMod2 = getAbilityModifier($personality2);
+        $intelligenceMod2 = getAbilityModifier($intelligence2);
+        $luckMod2 = getAbilityModifier($luck2);
+        
+        $strength3 = $abilityScoreArray3[0];
+        $agility3 = $abilityScoreArray3[1];
+        $stamina3 = $abilityScoreArray3[2];
+        $personality3 = $abilityScoreArray3[3];
+        $intelligence3 = $abilityScoreArray3[4];
+        $luck3 = $abilityScoreArray3[5];
+        
+        $strengthMod3 = getAbilityModifier($strength3);
+        $agilityMod3 = getAbilityModifier($agility3);
+        $staminaMod3 = getAbilityModifier($stamina3);
+        $personalityMod3 = getAbilityModifier($personality3);
+        $intelligenceMod3 = getAbilityModifier($intelligence3);
+        $luckMod3 = getAbilityModifier($luck3);
 
         $dieRollMessage = dieRollMethodText($abilityScoreGen);
 
@@ -213,15 +261,80 @@
             ?>
            </span>
            
-           <!--
-		<span id="profession0"></span>-->
-		<span id="strength0"></span> <span id="strengthMod0"></span>
-		<span id="agility0"></span>  <span id="agilityMod0"></span>
+		<span id="strength0">
+        <?php
+            echo $strength0;
+            ?>
+        </span>
+
+        
+        <span id="strengthMod0">
+        <?php
+            echo $strengthMod0;
+            ?>
+        </span>
+
+		<span id="agility0">
+        <?php
+            echo $agility0;
+            ?>
+        </span>
+
+          <span id="agilityMod0">
+        <?php
+            echo $agilityMod0;
+            ?>
+        </span>
+
            
-		<span id="stamina0"></span>  <span id="staminaMod0"></span>
-		<span id="personality0"></span> <span id="personalityMod0"></span>
-		<span id="intelligence0"></span> <span id="intelligenceMod0"></span>
-		<span id="luck0"></span> <span id="luckMod0"></span>
+		<span id="stamina0">
+        <?php
+            echo $stamina0;
+            ?>
+        </span>
+
+          <span id="staminaMod0">
+        <?php
+            echo $staminaMod0;
+            ?>
+        </span>
+
+		<span id="personality0">
+        <?php
+            echo $personality0;
+            ?>
+        </span>
+
+         <span id="personalityMod0">
+        <?php
+            echo $personalityMod0;
+            ?>
+        </span>
+
+		<span id="intelligence0">
+        <?php
+            echo $intelligence0;
+            ?>
+        </span>
+
+         <span id="intelligenceMod0">
+        <?php
+            echo $intelligenceMod0;
+            ?>
+        </span>
+
+		<span id="luck0">
+        <?php
+            echo $luck0;
+            ?>
+        </span>
+
+         <span id="luckMod0">
+        <?php
+            echo $luckMod0;
+            ?>
+        </span>
+
            
 		<p id="birthAugur0"><span id="luckySign0"></span>: <span id="luckyRoll0"></span> (<span id="LuckySignBonus0"></span>)</p>
            
@@ -335,15 +448,80 @@
             ?>
            </span>
 
-          <!-- 
-		<span id="profession1"></span>-->
-		<span id="strength1"></span> <span id="strengthMod1"></span>
-		<span id="agility1"></span>  <span id="agilityMod1"></span>
+           <span id="strength1">
+        <?php
+            echo $strength1;
+            ?>
+        </span>
+
+        
+        <span id="strengthMod1">
+        <?php
+            echo $strengthMod1;
+            ?>
+        </span>
+
+		<span id="agility1">
+        <?php
+            echo $agility1;
+            ?>
+        </span>
+
+          <span id="agilityMod1">
+        <?php
+            echo $agilityMod1;
+            ?>
+        </span>
+
            
-		<span id="stamina1"></span>  <span id="staminaMod1"></span>
-		<span id="personality1"></span> <span id="personalityMod1"></span>
-		<span id="intelligence1"></span> <span id="intelligenceMod1"></span>
-		<span id="luck1"></span> <span id="luckMod1"></span>
+		<span id="stamina1">
+        <?php
+            echo $stamina1;
+            ?>
+        </span>
+
+          <span id="staminaMod1">
+        <?php
+            echo $staminaMod1;
+            ?>
+        </span>
+
+		<span id="personality1">
+        <?php
+            echo $personality1;
+            ?>
+        </span>
+
+         <span id="personalityMod1">
+        <?php
+            echo $personalityMod1;
+            ?>
+        </span>
+
+		<span id="intelligence1">
+        <?php
+            echo $intelligence1;
+            ?>
+        </span>
+
+         <span id="intelligenceMod1">
+        <?php
+            echo $intelligenceMod1;
+            ?>
+        </span>
+
+		<span id="luck1">
+        <?php
+            echo $luck1;
+            ?>
+        </span>
+
+         <span id="luckMod1">
+        <?php
+            echo $luckMod1;
+            ?>
+        </span>
+
            
 		<p id="birthAugur1"><span id="luckySign1"></span>: <span id="luckyRoll1"></span> (<span id="LuckySignBonus1"></span>)</p>
            
@@ -460,16 +638,81 @@
             ?>
            </span>
            
-           <!--
-		<span id="profession2"></span>-->
+ 
+           <span id="strength2">
+        <?php
+            echo $strength2;
+            ?>
+        </span>
 
-		<span id="strength2"></span> <span id="strengthMod2"></span>
-		<span id="agility2"></span>  <span id="agilityMod2"></span>
+        
+        <span id="strengthMod2">
+        <?php
+            echo $strengthMod2;
+            ?>
+        </span>
+
+		<span id="agility2">
+        <?php
+            echo $agility2;
+            ?>
+        </span>
+
+          <span id="agilityMod2">
+        <?php
+            echo $agilityMod2;
+            ?>
+        </span>
+
            
-		<span id="stamina2"></span>  <span id="staminaMod2"></span>
-		<span id="personality2"></span> <span id="personalityMod2"></span>
-		<span id="intelligence2"></span> <span id="intelligenceMod2"></span>
-		<span id="luck2"></span> <span id="luckMod2"></span>
+		<span id="stamina2">
+        <?php
+            echo $stamina2;
+            ?>
+        </span>
+
+          <span id="staminaMod2">
+        <?php
+            echo $staminaMod2;
+            ?>
+        </span>
+
+		<span id="personality2">
+        <?php
+            echo $personality2;
+            ?>
+        </span>
+
+         <span id="personalityMod2">
+        <?php
+            echo $personalityMod2;
+            ?>
+        </span>
+
+		<span id="intelligence2">
+        <?php
+            echo $intelligence2;
+            ?>
+        </span>
+
+         <span id="intelligenceMod2">
+        <?php
+            echo $intelligenceMod2;
+            ?>
+        </span>
+
+		<span id="luck2">
+        <?php
+            echo $luck2;
+            ?>
+        </span>
+
+         <span id="luckMod2">
+        <?php
+            echo $luckMod2;
+            ?>
+        </span>
+
            
 		<p id="birthAugur2"><span id="luckySign2"></span>: <span id="luckyRoll2"></span> (<span id="LuckySignBonus2"></span>)</p>
           
@@ -579,15 +822,81 @@
                 echo '';
             }
             ?></span>
-           <!--
-		<span id="profession3"></span>-->
-		<span id="strength3"></span> <span id="strengthMod3"></span>
-		<span id="agility3"></span>  <span id="agilityMod3"></span>
+
+<span id="strength3">
+        <?php
+            echo $strength3;
+            ?>
+        </span>
+
+        
+        <span id="strengthMod3">
+        <?php
+            echo $strengthMod3;
+            ?>
+        </span>
+
+		<span id="agility3">
+        <?php
+            echo $agility3;
+            ?>
+        </span>
+
+          <span id="agilityMod3">
+        <?php
+            echo $agilityMod3;
+            ?>
+        </span>
+
            
-		<span id="stamina3"></span>  <span id="staminaMod3"></span>
-		<span id="personality3"></span> <span id="personalityMod3"></span>
-		<span id="intelligence3"></span> <span id="intelligenceMod3"></span>
-		<span id="luck3"></span> <span id="luckMod3"></span>
+		<span id="stamina3">
+        <?php
+            echo $stamina3;
+            ?>
+        </span>
+
+          <span id="staminaMod3">
+        <?php
+            echo $staminaMod3;
+            ?>
+        </span>
+
+		<span id="personality3">
+        <?php
+            echo $personality3;
+            ?>
+        </span>
+
+         <span id="personalityMod3">
+        <?php
+            echo $personalityMod3;
+            ?>
+        </span>
+
+		<span id="intelligence3">
+        <?php
+            echo $intelligence3;
+            ?>
+        </span>
+
+         <span id="intelligenceMod3">
+        <?php
+            echo $intelligenceMod3;
+            ?>
+        </span>
+
+		<span id="luck3">
+        <?php
+            echo $luck3;
+            ?>
+        </span>
+
+         <span id="luckMod3">
+        <?php
+            echo $luckMod3;
+            ?>
+        </span>
+
            
         <p id="birthAugur3"><span id="luckySign3"></span>: <span id="luckyRoll3"></span> (<span id="LuckySignBonus3"></span>)</p>
         
@@ -748,14 +1057,9 @@
 	/*
 	 Character() - Zero Level Character Constructor
 	*/
-	function Character() {
+//	function Character() {
 
-    let strength = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
-    let agility = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
-    let stamina = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
-    let	personality = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
-    let	intelligence = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
-    let	luck = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
+   /*
 	//let	profession = getOccupation();
 	let birthAugur = getLuckySign();
 	let strengthModifier = getStrengthModifier(strength);
@@ -771,8 +1075,9 @@
     //let armour = getArmour(profession);
 	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, luckModifier);
     let acBonus = getArmourProtection(armour);
-		
-		let zeroLevelCharacter = {
+		*/
+
+	/*	let zeroLevelCharacter = {
 			"strength": strength,
 			"agility": agility,
 			"stamina": stamina,
@@ -789,7 +1094,7 @@
 			"luckySign": birthAugur.luckySign,
 			"luckyRoll": birthAugur.luckyRoll,
             "luckySignBonus": getLuckModifier(luck),
-			"hitPoints": <?php echo $hitPoints ?> + staminaModifier + hitPointAdjustPerLevel(birthAugur,  getLuckModifier(luck)),
+			"hitPoints":  + staminaModifier + hitPointAdjustPerLevel(birthAugur,  getLuckModifier(luck)),
 			"ref": agilityModifier + adjustRef(birthAugur, getLuckModifier(luck)),
 			"fort": staminaModifier + adjustFort(birthAugur, getLuckModifier(luck)),
 			"will": personalityModifier + adjustWill(birthAugur, getLuckModifier(luck)),
@@ -801,12 +1106,12 @@
 			"critDie": "d4" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))) + "/I",
            // "baseLanguage": language,
             //"addLanguages": bonusLanguages,
-			"speed": 30 + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
+			//"speed": 30 + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
             //"professionWeapon": profession.trainedWeapon,
             //"professionWeaponDam": profession.damage,
-            "startingItem": randomItem.equipment,
+           // "startingItem": randomItem.equipment,
 			"fumbleDie": getFumbleDie (armour) + "" + addSign(adjustFumble(birthAugur, getLuckModifier(luck))),
-            "armour": armour,
+            //"armour": armour,
             //"raceTrait": addRaceAbilities(profession),
             "acNoArmoured": baseAC,
             "acWithArmour": baseAC + acBonus,
@@ -815,7 +1120,7 @@
 			//"farmAnimal": hasFarmAnimal (profession),
 			"wealth": Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + 5 + " cp"
 			
-		
+	
 			
 
 		};
@@ -825,197 +1130,22 @@
 		return zeroLevelCharacter;
 	  
 	  }
-      
-
-    /*
-     getStrengthModifier(strength) - returns the Strength Modifier, which is based on the Strength Score
-    */
-    function getStrengthModifier(strength){
-        if(strength === undefined || typeof strength !== 'number'|| strength <=2 || strength >=19){
-            //invalid
-            return -3;
-        }
-		if(strength >=4 && strength <=5){
-			return -2;
-		}
-		else if(strength >=6 && strength <=8){
-			return -1;
-		}
-		else if(strength >=9 && strength <=12){
-			return + 0;
-		}
-		else if(strength >=13 && strength <=15){
-			return + 1;
-		}	
-		else if(strength >=16 && strength <=17){
-			return + 2;
-		}		
-		else if(strength ==18){
-			return + 3;
-		}	
-		return -3;
-	}
+      	*/
 
 
-    /*
-    getAgilityModifier(agility) - returns the Agility Modifier, which is based on the Agility Score
-    */
-    function getAgilityModifier(agility){
-        if(agility === undefined || typeof agility !== 'number'|| agility <=2 || agility >=19){
-            //invalid
-            return -3;
-        }
-		if(agility >=4 && agility <=5){
-			return -2;
-		}
-		else if(agility >=6 && agility <=8){
-			return -1;
-		}
-		else if(agility >=9 && agility <=12){
-			return 0;
-		}
-		else if(agility >=13 && agility <=15){
-			return 1;
-		}	
-		else if(agility >=16 && agility <=17){
-			return 2;
-		}		
-		else if(agility ==18){
-			return 3;
-		}	
-		return -3;
-	}
-	  
-	/*
-    getStaminaModifier(stamina) - returns the Stamina Modifier, which is based on the Stamina Score
-    */
-	function getStaminaModifier(stamina){
-        if(stamina === undefined || typeof stamina !== 'number'|| stamina <=2 || stamina >=19){
-            //invalid
-            return -3;
-        }
-		if(stamina >=4 && stamina <=5){
-			return -2;
-		}
-		else if(stamina >=6 && stamina <=8){
-			return -1;
-		}
-		else if(stamina >=9 && stamina <=12){
-			return + 0;
-		}
-		else if(stamina >=13 && stamina <=15){
-			return + 1;
-		}	
-		else if(stamina >=16 && stamina <=17){
-			return + 2;
-		}		
-		else if(stamina ==18){
-			return + 3;
-		}	
-		return -3;
-	}
-
-    /*
-    getPersonalityModifier(personality) - returns the Personality Modifier, which is based on the Personality Score
-    */
-	function getPersonalityModifier(personality){
-        if(personality === undefined || typeof personality !== 'number'|| personality <=2 || personality >=19){
-            //invalid
-            return -3;
-        }
-		if(personality >=4 && personality <=5){
-			return -2;
-		}
-		else if(personality >=6 && personality <=8){
-			return -1;
-		}
-		else if(personality >=9 && personality <=12){
-			return + 0;
-		}
-		else if(personality >=13 && personality <=15){
-			return + 1;
-		}	
-		else if(personality >=16 && personality <=17){
-			return + 2;
-		}		
-		else if(personality ==18){
-			return + 3;
-		}	
-		return -3;
-	}
-
-    /*
-    getIntelligenceModifier(intelligence) - returns the Intelligence Modifier, which is based on the Intelligence Score 
-    */
-	function getIntelligenceModifier(intelligence){
-        if(intelligence === undefined || typeof intelligence !== 'number'|| intelligence <=2 || intelligence >=19){
-            //invalid
-            return -3;
-        }
-		if(intelligence >=4 && intelligence <=5){
-			return -2;
-		}
-		else if(intelligence >=6 && intelligence <=8){
-			return -1;
-		}
-		else if(intelligence >=9 && intelligence <=12){
-			return + 0;
-		}
-		else if(intelligence >=13 && intelligence <=15){
-			return + 1;
-		}	
-		else if(intelligence >=16 && intelligence <=17){
-			return + 2;
-		}		
-		else if(intelligence ==18){
-			return + 3;
-		}	
-		return -3;
-	}
-
-    /*
-    getLuckModifier(luck) - returns the luck Modifier, which is based on the luck Score
-    */
-    function getLuckModifier(luck){
-        if(luck === undefined || typeof luck !== 'number'|| luck <=2 || luck >=19){
-            //invalid
-            return -3;
-        }
-		if(luck >=4 && luck <=5){
-			return -2;
-		}
-		else if(luck >=6 && luck <=8){
-			return -1;
-		}
-		else if(luck >=9 && luck <=12){
-			return + 0;
-		}
-		else if(luck >=13 && luck <=15){
-			return + 1;
-		}	
-		else if(luck >=16 && luck <=17){
-			return + 2;
-		}		
-		else if(luck ==18){
-			return + 3;
-		}	
-		return -3;
-	}
-      
-
-       
 	  
         let imgData = "images/dcc_zero_character_sheet.png";
         $("#character_sheet").attr("src", imgData);
         
 
-	  let data = [Character(),Character(),Character(),Character()];
-	  for(let index = 0; index < 4 ; index++){
+	  //let data = [Character(),Character(),Character(),Character()];
+	// for(let index = 0; index < 4 ; index++){
 	  
          
           
           //$("#profession" + index).html(data[index].profession);
           
+          /*
           $("#strength" + index).html(data[index].strength);
           $("#strengthMod" + index).html(addModifierSign(data[index].strengthModifier));
           
@@ -1036,7 +1166,8 @@
           
           $("#luck" + index).html(data[index].luck);
           $("#luckMod" + index).html(addModifierSign(data[index].luckModifier));
-          
+          */
+          /*
           $("#luckySign" + index).html(data[index].luckySign);
           $("#luckyRoll" + index).html(data[index].luckyRoll);
           $("#LuckySignBonus" + index).html(addModifierSign(data[index].luckModifier));
@@ -1057,23 +1188,23 @@
           
           $("#fumbleDie" + index).html(data[index].fumbleDie);
           
-          $("#critDie" + index).html(data[index].critDie);
+          $("#critDie" + index).html(data[index].critDie);*/
          // $("#critTable" + index).html(data[index].critTable);
           
           
         //  $("#baseLanguage" + index).html(data[index].baseLanguage);
           //$("#addLanguages" + index).html(data[index].addLanguages);
           
-          $("#speed" + index).html(data[index].speed);
+       //   $("#speed" + index).html(data[index].speed);
           
         //  $("#professionWeapon" + index).html(data[index].professionWeapon);
           
-          $("#equipment" + index).html(data[index].startingItem);
+     //     $("#equipment" + index).html(data[index].startingItem);
           
           //$("#professionalWeaponDamage" + index).html(data[index].professionWeaponDam);
          // $("#randomWeaponDamage" + index).html(data[index].randomWeaponDam);
-          $("#armour" + index).html(data[index].armour);
-          $("#acBonus" + index).html(data[index].acBonus);
+        //  $("#armour" + index).html(data[index].armour);
+     //     $("#acBonus" + index).html(data[index].acBonus);
           
           
 	  
@@ -1082,13 +1213,12 @@
           
          // $("#tradeGood" + index).html(data[index].tradeGoods);
          // $("#raceAbility" + index).html(data[index].raceTrait);
-          $("#wealth" + index).html(data[index].wealth);
-          
+  //        
           
 
 
 	  
-	  }
+//	  }
 
   </script>
 		
