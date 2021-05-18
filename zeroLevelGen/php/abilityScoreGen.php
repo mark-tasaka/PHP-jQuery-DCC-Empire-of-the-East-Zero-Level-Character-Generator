@@ -220,5 +220,17 @@ function getAbilityModifier($score)
     return $modifier;
 }
 
+function getModSign($mod)
+{
+    if($mod >= 0)
+    {
+        return '+' . $mod;
+    }
+    else
+    {
+        return $mod;
+    }
+}
+
 
 ?>

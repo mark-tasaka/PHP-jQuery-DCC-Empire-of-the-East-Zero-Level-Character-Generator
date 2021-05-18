@@ -13,10 +13,6 @@
 
 	<link rel="stylesheet" type="text/css" href="css/dcc_zero_characters.css">
     
-    
-   <!--<script type="text/javascript" src="js/occupation.js"></script>-->
-    
-    <<!--script type="text/javascript" src="js/luckySign.js"></script>-->
    <script type="text/javascript" src="js/adjustments.js"></script>
     
     
@@ -235,7 +231,32 @@
         $weaponDamage2 = $occupationArray2[2];
         $weaponDamage3 = $occupationArray3[2];
 
-        //$trainedWeapon0 = 
+        $birthAugur0 = array();
+        $birthAugur1 = array();
+        $birthAugur2 = array();
+        $birthAugur3 = array();
+        
+        $birthAugur0 = getBirthAugur();
+        $birthAugur1 = getBirthAugur();
+        $birthAugur2 = getBirthAugur();
+        $birthAugur3 = getBirthAugur();
+        
+        $birthAugurNo0 = $birthAugur0[0];
+        $birthAugurNo1 = $birthAugur1[0];
+        $birthAugurNo2 = $birthAugur2[0];
+        $birthAugurNo3 = $birthAugur3[0];
+        
+        $birthAugurName0 = $birthAugur0[1];
+        $birthAugurName1 = $birthAugur1[1];
+        $birthAugurName2 = $birthAugur2[1];
+        $birthAugurName3 = $birthAugur3[1];
+        
+        $birthAugurRoll0 = $birthAugur0[2];
+        $birthAugurRoll1 = $birthAugur1[2];
+        $birthAugurRoll2 = $birthAugur2[2];
+        $birthAugurRoll3 = $birthAugur3[2];
+
+
 
     ?>
 
@@ -271,6 +292,7 @@
         
         <span id="strengthMod0">
         <?php
+            $strengthMod0 = getModSign($strengthMod0);
             echo $strengthMod0;
             ?>
         </span>
@@ -283,6 +305,7 @@
 
           <span id="agilityMod0">
         <?php
+            $agilityMod0 = getModSign($agilityMod0);
             echo $agilityMod0;
             ?>
         </span>
@@ -296,6 +319,7 @@
 
           <span id="staminaMod0">
         <?php
+            $staminaMod0 = getModSign($staminaMod0);
             echo $staminaMod0;
             ?>
         </span>
@@ -308,6 +332,7 @@
 
          <span id="personalityMod0">
         <?php
+            $personalityMod0 = getModSign($personalityMod0);
             echo $personalityMod0;
             ?>
         </span>
@@ -320,6 +345,7 @@
 
          <span id="intelligenceMod0">
         <?php
+            $intelligenceMod0 = getModSign($intelligenceMod0);
             echo $intelligenceMod0;
             ?>
         </span>
@@ -332,12 +358,16 @@
 
          <span id="luckMod0">
         <?php
+            $luckMod0 = getModSign($luckMod0);
             echo $luckMod0;
             ?>
         </span>
 
-           
-		<p id="birthAugur0"><span id="luckySign0"></span>: <span id="luckyRoll0"></span> (<span id="LuckySignBonus0"></span>)</p>
+		<p id="birthAugur0">
+        <?php
+            echo $birthAugurName0 . ': ' . $birthAugurRoll0 . ' (' . $luckMod0 . ')';
+        ?>
+        </p>
            
         
         <p id="armourClass0"> <span id="modifiedAC0"></span>(<span id="baseAC0"></span>)</p>
@@ -458,6 +488,7 @@
         
         <span id="strengthMod1">
         <?php
+            $strengthMod1 = getModSign($strengthMod1);
             echo $strengthMod1;
             ?>
         </span>
@@ -470,6 +501,7 @@
 
           <span id="agilityMod1">
         <?php
+            $agilityMod1 = getModSign($agilityMod1);
             echo $agilityMod1;
             ?>
         </span>
@@ -483,6 +515,7 @@
 
           <span id="staminaMod1">
         <?php
+            $staminaMod1 = getModSign($staminaMod1);
             echo $staminaMod1;
             ?>
         </span>
@@ -495,6 +528,7 @@
 
          <span id="personalityMod1">
         <?php
+            $personalityMod1 = getModSign($personalityMod1);
             echo $personalityMod1;
             ?>
         </span>
@@ -507,6 +541,7 @@
 
          <span id="intelligenceMod1">
         <?php
+            $intelligenceMod1 = getModSign($intelligenceMod1);
             echo $intelligenceMod1;
             ?>
         </span>
@@ -519,12 +554,17 @@
 
          <span id="luckMod1">
         <?php
+            $luckMod1 = getModSign($luckMod1);
             echo $luckMod1;
             ?>
         </span>
 
            
-		<p id="birthAugur1"><span id="luckySign1"></span>: <span id="luckyRoll1"></span> (<span id="LuckySignBonus1"></span>)</p>
+		<p id="birthAugur1">
+        <?php
+            echo $birthAugurName1 . ': ' . $birthAugurRoll1 . ' (' . $luckMod1 . ')';
+        ?>
+        </p>
            
         <p id="armourClass1"> <span id="modifiedAC1"></span>(<span id="baseAC1"></span>)</p>
 
@@ -639,7 +679,6 @@
             ?>
            </span>
            
- 
            <span id="strength2">
         <?php
             echo $strength2;
@@ -649,6 +688,7 @@
         
         <span id="strengthMod2">
         <?php
+            $strengthMod2 = getModSign($strengthMod2);
             echo $strengthMod2;
             ?>
         </span>
@@ -661,6 +701,7 @@
 
           <span id="agilityMod2">
         <?php
+            $agilityMod2 = getModSign($agilityMod2);
             echo $agilityMod2;
             ?>
         </span>
@@ -674,6 +715,7 @@
 
           <span id="staminaMod2">
         <?php
+            $staminaMod2 = getModSign($staminaMod2);
             echo $staminaMod2;
             ?>
         </span>
@@ -686,6 +728,7 @@
 
          <span id="personalityMod2">
         <?php
+            $personalityMod2 = getModSign($personalityMod2);
             echo $personalityMod2;
             ?>
         </span>
@@ -698,6 +741,7 @@
 
          <span id="intelligenceMod2">
         <?php
+            $intelligenceMod2 = getModSign($intelligenceMod2);
             echo $intelligenceMod2;
             ?>
         </span>
@@ -710,12 +754,16 @@
 
          <span id="luckMod2">
         <?php
+            $luckMod2 = getModSign($luckMod2);
             echo $luckMod2;
             ?>
         </span>
-
            
-		<p id="birthAugur2"><span id="luckySign2"></span>: <span id="luckyRoll2"></span> (<span id="LuckySignBonus2"></span>)</p>
+		<p id="birthAugur2">
+        <?php
+            echo $birthAugurName2 . ': ' . $birthAugurRoll2 . ' (' . $luckMod2 . ')';
+        ?>
+        </p>
           
         <p id="armourClass2"> <span id="modifiedAC2"></span>(<span id="baseAC2"></span>)</p>
 
@@ -833,6 +881,7 @@
         
         <span id="strengthMod3">
         <?php
+            $strengthMod3 = getModSign($strengthMod3);
             echo $strengthMod3;
             ?>
         </span>
@@ -845,6 +894,7 @@
 
           <span id="agilityMod3">
         <?php
+            $agilityMod3 = getModSign($agilityMod3);
             echo $agilityMod3;
             ?>
         </span>
@@ -858,6 +908,7 @@
 
           <span id="staminaMod3">
         <?php
+            $staminaMod3 = getModSign($staminaMod3);
             echo $staminaMod3;
             ?>
         </span>
@@ -870,6 +921,7 @@
 
          <span id="personalityMod3">
         <?php
+            $personalityMod3 = getModSign($personalityMod3);
             echo $personalityMod3;
             ?>
         </span>
@@ -882,6 +934,7 @@
 
          <span id="intelligenceMod3">
         <?php
+            $intelligenceMod3 = getModSign($intelligenceMod3);
             echo $intelligenceMod3;
             ?>
         </span>
@@ -894,12 +947,16 @@
 
          <span id="luckMod3">
         <?php
+            $luckMod3 = getModSign($luckMod3);
             echo $luckMod3;
             ?>
         </span>
-
            
-        <p id="birthAugur3"><span id="luckySign3"></span>: <span id="luckyRoll3"></span> (<span id="LuckySignBonus3"></span>)</p>
+        <p id="birthAugur3">
+        <?php
+            echo $birthAugurName3 . ': ' . $birthAugurRoll3 . ' (' . $luckMod3 . ')';
+        ?>
+        </p>
         
         <p id="armourClass3"> <span id="modifiedAC3"></span>(<span id="baseAC3"></span>)</p>
            
@@ -1005,174 +1062,10 @@
   <script>
 	  
 
-      
-      
-	  
-	/*
-	 Character() - Zero Level Character Constructor
-	*/
-//	function Character() {
-
-   /*
-	//let	profession = getOccupation();
-	let birthAugur = getLuckySign();
-	let strengthModifier = getStrengthModifier(strength);
-	let staminaModifier = getStaminaModifier(stamina);
-	let agilityModifier = getAgilityModifier(agility);
-	let personalityModifier = getPersonalityModifier(personality);
-	let intelligenceModifier = getIntelligenceModifier(intelligence);
-    let luckModifier = getLuckModifier(luck);
-    //let species = profession.race;
-    //let language = getBaseLanguages(species, intelligence, luckModifier, species);
-   // let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);
-    let randomItem = getStartingEquipment();
-    //let armour = getArmour(profession);
-	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, luckModifier);
-    let acBonus = getArmourProtection(armour);
-		*/
-
-	/*	let zeroLevelCharacter = {
-			"strength": strength,
-			"agility": agility,
-			"stamina": stamina,
-			"personality": personality,
-			"intelligence": intelligence,
-			"luck": luck,
-			"strengthModifier": strengthModifier,
-			"agilityModifier": agilityModifier,
-			"staminaModifier": staminaModifier,
-			"personalityModifier": personalityModifier,
-			"intelligenceModifier": intelligenceModifier,
-			"luckModifier":  getLuckModifier(luck),
-			//"profession":  profession.occupation,
-			"luckySign": birthAugur.luckySign,
-			"luckyRoll": birthAugur.luckyRoll,
-            "luckySignBonus": getLuckModifier(luck),
-			"hitPoints":  + staminaModifier + hitPointAdjustPerLevel(birthAugur,  getLuckModifier(luck)),
-			"ref": agilityModifier + adjustRef(birthAugur, getLuckModifier(luck)),
-			"fort": staminaModifier + adjustFort(birthAugur, getLuckModifier(luck)),
-			"will": personalityModifier + adjustWill(birthAugur, getLuckModifier(luck)),
-			"init": agilityModifier + adjustInit(birthAugur, getLuckModifier(luck)),
-            "melee": strengthModifier + meleeAdjust(birthAugur, getLuckModifier(luck)),
-            "meleeDamage": strengthModifier + meleeDamageAdjust(birthAugur, getLuckModifier(luck)),
-			"range": agilityModifier + rangeAdjust(birthAugur, getLuckModifier(luck)),
-			"rangeDamage": rangeDamageAdjust(birthAugur, getLuckModifier(luck)),
-			"critDie": "d4" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))) + "/I",
-           // "baseLanguage": language,
-            //"addLanguages": bonusLanguages,
-			//"speed": 30 + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
-            //"professionWeapon": profession.trainedWeapon,
-            //"professionWeaponDam": profession.damage,
-           // "startingItem": randomItem.equipment,
-			"fumbleDie": getFumbleDie (armour) + "" + addSign(adjustFumble(birthAugur, getLuckModifier(luck))),
-            //"armour": armour,
-            //"raceTrait": addRaceAbilities(profession),
-            "acNoArmoured": baseAC,
-            "acWithArmour": baseAC + acBonus,
-            //"tradeGoods": profession.tradeGoods,
-			//"animal": addAnimal (profession),
-			//"farmAnimal": hasFarmAnimal (profession),
-			"wealth": Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + 5 + " cp"
-			
-	
-			
-
-		};
-	    if(zeroLevelCharacter.hitPoints <= 0 ){
-			zeroLevelCharacter.hitPoints = 1;
-		}
-		return zeroLevelCharacter;
-	  
-	  }
-      	*/
-
-
 	  
         let imgData = "images/dcc_zero_character_sheet.png";
         $("#character_sheet").attr("src", imgData);
         
-
-	  //let data = [Character(),Character(),Character(),Character()];
-	// for(let index = 0; index < 4 ; index++){
-	  
-         
-          
-          //$("#profession" + index).html(data[index].profession);
-          
-          /*
-          $("#strength" + index).html(data[index].strength);
-          $("#strengthMod" + index).html(addModifierSign(data[index].strengthModifier));
-          
-          $("#agility" + index).html(data[index].agility);
-          $("#agilityMod" + index).html(addModifierSign(data[index].agilityModifier));
-          
-          $("#agility" + index).html(data[index].agility);
-          $("#agilityMod" + index).html(addModifierSign(data[index].agilityModifier));
-          
-          $("#stamina" + index).html(data[index].stamina);
-          $("#staminaMod" + index).html(addModifierSign(data[index].staminaModifier));
-          
-          $("#personality" + index).html(data[index].personality);
-          $("#personalityMod" + index).html(addModifierSign(data[index].personalityModifier));
-          
-          $("#intelligence" + index).html(data[index].intelligence);
-          $("#intelligenceMod" + index).html(addModifierSign(data[index].intelligenceModifier));
-          
-          $("#luck" + index).html(data[index].luck);
-          $("#luckMod" + index).html(addModifierSign(data[index].luckModifier));
-          */
-          /*
-          $("#luckySign" + index).html(data[index].luckySign);
-          $("#luckyRoll" + index).html(data[index].luckyRoll);
-          $("#LuckySignBonus" + index).html(addModifierSign(data[index].luckModifier));
-          
-          $("#hitPoints" + index).html(data[index].hitPoints);
-          $("#baseAC" + index).html(data[index].acNoArmoured);
-          $("#modifiedAC" + index).html(data[index].acWithArmour);
-          
-          $("#ref" + index).html(addModifierSign(data[index].ref));
-          $("#fort" + index).html(addModifierSign(data[index].fort));
-          $("#will" + index).html(addModifierSign(data[index].will));
-          
-          $("#init" + index).html(addModifierSign(data[index].init));
-          $("#melee" + index).html(addModifierSign(data[index].melee));
-          $("#meleeDamage" + index).html(addModifierSign(data[index].meleeDamage));
-          $("#range" + index).html(addModifierSign(data[index].range));
-          $("#rangeDamage" + index).html(addModifierSign(data[index].rangeDamage));
-          
-          $("#fumbleDie" + index).html(data[index].fumbleDie);
-          
-          $("#critDie" + index).html(data[index].critDie);*/
-         // $("#critTable" + index).html(data[index].critTable);
-          
-          
-        //  $("#baseLanguage" + index).html(data[index].baseLanguage);
-          //$("#addLanguages" + index).html(data[index].addLanguages);
-          
-       //   $("#speed" + index).html(data[index].speed);
-          
-        //  $("#professionWeapon" + index).html(data[index].professionWeapon);
-          
-     //     $("#equipment" + index).html(data[index].startingItem);
-          
-          //$("#professionalWeaponDamage" + index).html(data[index].professionWeaponDam);
-         // $("#randomWeaponDamage" + index).html(data[index].randomWeaponDam);
-        //  $("#armour" + index).html(data[index].armour);
-     //     $("#acBonus" + index).html(data[index].acBonus);
-          
-          
-	  
-	  //  $("#animal" + index ).html(data[index].animal); 
-        //  $("#farmAnimal" + index).html(data[index].farmAnimal);
-          
-         // $("#tradeGood" + index).html(data[index].tradeGoods);
-         // $("#raceAbility" + index).html(data[index].raceTrait);
-  //        
-          
-
-
-	  
-//	  }
 
   </script>
 		

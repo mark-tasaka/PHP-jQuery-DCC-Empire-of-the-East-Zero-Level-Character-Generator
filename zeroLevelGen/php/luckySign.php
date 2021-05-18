@@ -40,6 +40,18 @@ function getLuckySign($input)
         
 }
 
+function getBirthAugur()
+{
+        $select = rand(0, 29);
+
+        $birthAugurArray = array();
+
+        $birthAugurArray = getLuckySign($select);
+
+        return $birthAugurArray;
+
+}
+
 
 
 ?>
