@@ -4,6 +4,11 @@ The Dungeon Crawl Classics Empire of the East Zero Level Character Generator has
 
 
 
+Update 1.03: 2021-05-18
+
+Deleted abilityModifiers.js.  Updates to levelZeroCharacter.php, abilityScoreGen.pho and luckySign.php.
+
+
 Update 1.02: 2021-05-16
 
 Updated levelZeroCharacter.php; deleted luckySign.js and created luckySign.php.
