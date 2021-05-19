@@ -190,14 +190,20 @@
         if($hitPointsGen == "1")
         {
             
-            $hitPoints = rand(1, 4);
+            $hitPoints0 = rand(1, 4);
+            $hitPoints1 = rand(1, 4);
+            $hitPoints2 = rand(1, 4);
+            $hitPoints3 = rand(1, 4);
 
         }
 
         if($hitPointsGen == "2")
         {
             
-            $hitPoints = 4;
+            $hitPoints0 = 4;
+            $hitPoints1 = 4;
+            $hitPoints2 = 4;
+            $hitPoints3 = 4;
         }
 
         $professionNum0 = getOccupationNumber(); 
@@ -255,6 +261,77 @@
         $birthAugurRoll1 = $birthAugur1[2];
         $birthAugurRoll2 = $birthAugur2[2];
         $birthAugurRoll3 = $birthAugur3[2];
+
+        $meleeHit0 = $strengthMod0;
+        $meleeHit1 = $strengthMod1;
+        $meleeHit2 = $strengthMod2;
+        $meleeHit3 = $strengthMod3;
+
+        $meleeDam0 = $strengthMod0;
+        $meleeDam1 = $strengthMod1;
+        $meleeDam2 = $strengthMod2;
+        $meleeDam3 = $strengthMod3;
+
+        $missileHit0 = $agilityMod0;
+        $missileHit1 = $agilityMod1;
+        $missileHit2 = $agilityMod2;
+        $missileHit3 = $agilityMod3;
+
+        $missileDam0 = $agilityMod0;
+        $missileDam1 = $agilityMod1;
+        $missileDam2 = $agilityMod2;
+        $missileDam3 = $agilityMod3;
+
+        $init0 = getInit($agilityMod0, $luckMod0, $birthAugurNo0);
+        $init1 = getInit($agilityMod1, $luckMod1, $birthAugurNo1);
+        $init2 = getInit($agilityMod2, $luckMod2, $birthAugurNo2);
+        $init3 = getInit($agilityMod3, $luckMod3, $birthAugurNo3);
+
+        $speed0 = getSpeed($luckMod0, $birthAugurNo0);
+        $speed1 = getSpeed($luckMod1, $birthAugurNo1);
+        $speed2 = getSpeed($luckMod2, $birthAugurNo2);
+        $speed3 = getSpeed($luckMod3, $birthAugurNo3);
+
+        $critMod0 = getCritMod($luckMod0, $birthAugurNo0);
+        $critMod1 = getCritMod($luckMod1, $birthAugurNo1);
+        $critMod2 = getCritMod($luckMod2, $birthAugurNo2);
+        $critMod3 = getCritMod($luckMod3, $birthAugurNo3);
+
+        $fumbleMod0 = getFumbleMod($luckMod0, $birthAugurNo0);
+        $fumbleMod1 = getFumbleMod($luckMod1, $birthAugurNo1);
+        $fumbleMod2 = getFumbleMod($luckMod2, $birthAugurNo2);
+        $fumbleMod3 = getFumbleMod($luckMod3, $birthAugurNo3);
+
+        $armourClass0 = getAC($agilityMod0, $luckMod0, $birthAugurNo0); 
+        $armourClass1 = getAC($agilityMod1, $luckMod1, $birthAugurNo1); 
+        $armourClass2 = getAC($agilityMod2, $luckMod2, $birthAugurNo2); 
+        $armourClass3 = getAC($agilityMod3, $luckMod3, $birthAugurNo3); 
+
+        $hotPointLuckBonus0 = getHitPointLuck($luckMod0, $birthAugurNo0);
+        $hotPointLuckBonus1 = getHitPointLuck($luckMod1, $birthAugurNo1);
+        $hotPointLuckBonus2 = getHitPointLuck($luckMod2, $birthAugurNo2);
+        $hotPointLuckBonus3 = getHitPointLuck($luckMod3, $birthAugurNo3);
+
+        $luckToHp0 = getHitPointLuck($luckMod0, $birthAugurNo0);
+        $luckToHp1 = getHitPointLuck($luckMod1, $birthAugurNo1);
+        $luckToHp2 = getHitPointLuck($luckMod2, $birthAugurNo2);
+        $luckToHp3 = getHitPointLuck($luckMod3, $birthAugurNo3);
+        
+        $hitPoints0 += $staminaMod0;
+        $hitPoints1 += $staminaMod1;
+        $hitPoints2 += $staminaMod2;
+        $hitPoints3 += $staminaMod3;
+
+        $hitPoints0 += $luckToHp0;
+        $hitPoints1 += $luckToHp1;
+        $hitPoints2 += $luckToHp2;
+        $hitPoints3 += $luckToHp3;
+        
+        $hitPoints0 = minHitPoints($hitPoints0);
+        $hitPoints1 = minHitPoints($hitPoints1);
+        $hitPoints2 = minHitPoints($hitPoints2);
+        $hitPoints3 = minHitPoints($hitPoints3);
+
 
 
 
@@ -370,21 +447,61 @@
         </p>
            
         
-        <p id="armourClass0"> <span id="modifiedAC0"></span>(<span id="baseAC0"></span>)</p>
+        <p id="armourClass0"> 
+        <?php
+            echo $armourClass0;
+            ?>
+        </p>
 
-		<span id="hitPoints0"></span> 
+		<span id="hitPoints0">
+        <?php
+            echo $hitPoints0;
+        ?>
+        </span> 
            
         <span id="ref0"></span>
         <span id="fort0"></span>
         <span id="will0"></span>
 		   
-        <span id="init0"></span>
-		<span id="melee0"></span>
-        <span id="range0"></span>
-		<span id="meleeDamage0"></span>
-		 <span id="rangeDamage0"></span>
+        <span id="init0">
+        <?php
+            $init0 = getModSign($init0);
+            echo $init0;
+            ?>
+        </span>
+
+
+		<span id="melee0">
+        <?php
+        $meleeHit0 = getModSign($meleeHit0);
+        echo $meleeHit0;
+        ?>
+        </span>
+        <span id="range0">
+        <?php
+        $missileHit0 = getModSign($missileHit0);
+        echo $missileHit0;
+        ?>
+        </span>
+		<span id="meleeDamage0">
+        <?php
+        $meleeDam0 = getModSign($meleeDam0);
+        echo $meleeDam0;
+        ?>
+        </span>
+		 <span id="rangeDamage0">
+        <?php
+        $missileDam0 = getModSign($missileDam0);
+        echo $missileDam0;
+        ?>
+         </span>
            
-        <span id="fumbleDie0"></span>
+        <span id="fumbleDie0">
+        <?php
+            $fumbleMod0 = getModSign($fumbleMod0);
+            echo 'd4' . $fumbleMod0;
+        ?>
+        </span>
            
         <span id="sex0">
            <?php
@@ -427,25 +544,28 @@
         </span>
            
            
-		<span id="critDie0"></span>
-		<!--<span id="critTable0"></span>-->
+		<span id="critDie0">
+        <?php
+        
+        $critMod0 = getModSign($critMod0);
+            echo 'd4' . $critMod0 . ' / I';  
+        ?>
+        </span>
            
            <span id="wealth0"></span>
            
            <span id="languages0"><span id="baseLanguage0"></span><span id="addLanguages0"></span></span>
 		 
-           <span id="speed0"></span>
+           <span id="speed0">
+           <?php
+            echo $speed0;
+           ?>
+           </span>
            
            <span id="physicalDescription0"></span>
            
-          <!-- <span id="weapons0"><span id="professionWeapon0"></span><span id="randomWeapon0"></span></span>
-		   
-           <span id="weaponDamage0"><span id="professionalWeaponDamage0"></span><span id="randomWeaponDamage0"><span id="randomWeaponDamageAdjustment"></span></span></span>
-           -->
 
            <span id="equipment0"></span>
-           
-           <!--<span id="tradeGood0"></span>-->
            
            <span id="armour0"></span>
            <span id="acBonus0"></span>
@@ -458,8 +578,6 @@
             ?> 
             </span>
 
-           <!--<p id="notes0"><span id="raceAbility0"></span><span id="animal0"></span><span id="farmAnimal0"></span></p>
--->
            <span id="damageBonus0"></span>
            	   
 		</aside>
@@ -566,22 +684,61 @@
         ?>
         </p>
            
-        <p id="armourClass1"> <span id="modifiedAC1"></span>(<span id="baseAC1"></span>)</p>
+        <p id="armourClass1">
+        <?php
+            echo $armourClass1;
+            ?>
+            </p>
 
            
-		<span id="hitPoints1"></span> 
+		<span id="hitPoints1">
+        <?php
+            echo $hitPoints1;
+        ?>
+        </span> 
            
         <span id="ref1"></span>
         <span id="fort1"></span>
         <span id="will1"></span>
 		   
-        <span id="init1"></span>
-		<span id="melee1"></span>
-        <span id="range1"></span>
-		<span id="meleeDamage1"></span>
-		 <span id="rangeDamage1"></span>
+        <span id="init1">
+        <?php
+            $init1 = getModSign($init1);
+            echo $init1;
+            ?>
+        </span>
+
+		<span id="melee1">
+        <?php
+        $meleeHit1 = getModSign($meleeHit1);
+        echo $meleeHit1;
+        ?>
+        </span>
+        <span id="range1">
+        <?php
+        $missileHit1 = getModSign($missileHit1);
+        echo $missileHit1;
+        ?>
+        </span>
+		<span id="meleeDamage1">
+        <?php
+        $meleeDam1 = getModSign($meleeDam1);
+        echo $meleeDam1;
+        ?>
+        </span>
+		 <span id="rangeDamage1">
+        <?php
+        $missileDam1 = getModSign($missileDam1);
+        echo $missileDam1;
+        ?>
+         </span>
            
-        <span id="fumbleDie1"></span>
+        <span id="fumbleDie1">
+        <?php
+            $fumbleMod1 = getModSign($fumbleMod1);
+            echo 'd4' . $fumbleMod1;
+        ?>
+        </span>
            
         <span id="sex1">
            
@@ -624,25 +781,28 @@
             ?>
         </span>
            
-		<span id="critDie1"></span>
-		<!--<span id="critTable1"></span>-->
+           
+		<span id="critDie1">
+        <?php
+        
+        $critMod1 = getModSign($critMod1);
+            echo 'd4' . $critMod1 . ' / I';  
+        ?>
+        </span>
            
                       
            <span id="wealth1"></span>
            
            <span id="languages1"><span id="baseLanguage1"></span><span id="addLanguages1"></span></span>
 		 
-           <span id="speed1"></span>
+           <span id="speed1">
+           <?php
+            echo $speed1;
+           ?>
+           </span>
            
            <span id="physicalDescription1"></span>
-           
-           <!--
-           <span id="weapons1"><span id="professionWeapon1"></span><span id="randomWeapon1"></span></span>
-		   
-           <span id="weaponDamage1"><span id="professionalWeaponDamage1"></span><span id="randomWeaponDamage1"><span id="randomWeaponDamageAdjustment"></span></span></span>-->
-           
            <span id="equipment1"></span>
-           <!--<span id="tradeGood1"></span>-->
            
            <span id="armour1"></span>
            <span id="acBonus1"></span>
@@ -655,7 +815,6 @@
             ?> 
             </span>
            
-           <!--<p id="notes1"><span id="raceAbility1"></span><span id="animal1"></span><span id="farmAnimal1"></span></p>-->
            
            
            <span id="damageBonus1"></span>
@@ -765,22 +924,62 @@
         ?>
         </p>
           
-        <p id="armourClass2"> <span id="modifiedAC2"></span>(<span id="baseAC2"></span>)</p>
+        <p id="armourClass2">
+        <?php
+            echo $armourClass2;
+            ?>
+           </p>
 
            
-		<span id="hitPoints2"></span> 
+		<span id="hitPoints2">
+        <?php
+            echo $hitPoints2;
+        ?>
+        </span> 
            
         <span id="ref2"></span>
         <span id="fort2"></span>
         <span id="will2"></span>
 		   
-        <span id="init2"></span>
-		<span id="melee2"></span>
-        <span id="range2"></span>
-		<span id="meleeDamage2"></span>
-		 <span id="rangeDamage2"></span>
+        <span id="init2">
+        <?php
+            $init2 = getModSign($init2);
+            echo $init2;
+            ?>
+        </span>
+
+
+		<span id="melee2">
+        <?php
+        $meleeHit2 = getModSign($meleeHit2);
+        echo $meleeHit2;
+        ?>
+        </span>
+        <span id="range2">
+        <?php
+        $missileHit2 = getModSign($missileHit2);
+        echo $missileHit2;
+        ?>
+        </span>
+		<span id="meleeDamage2">
+        <?php
+        $meleeDam2 = getModSign($meleeDam2);
+        echo $meleeDam2;
+        ?>
+        </span>
+		 <span id="rangeDamage2">
+        <?php
+        $missileDam2 = getModSign($missileDam2);
+        echo $missileDam2;
+        ?>
+         </span>
            
-        <span id="fumbleDie2"></span>
+        <span id="fumbleDie2">
+        <?php
+            $fumbleMod2 = getModSign($fumbleMod2);
+            echo 'd4' . $fumbleMod2;
+        ?>
+        </span>
            
         <span id="sex2">
            
@@ -822,24 +1021,30 @@
             ?>
         </span>
            
-		<span id="critDie2"></span>
+           
+		<span id="critDie2">
+        <?php
+        
+        $critMod2 = getModSign($critMod2);
+            echo 'd4' . $critMod2 . ' / I';  
+        ?>
+        </span>
            
                       
            <span id="wealth2"></span>
            
            <span id="languages2"><span id="baseLanguage2"></span><span id="addLanguages2"></span></span>
 		 
-           <span id="speed2"></span>
+           <span id="speed2">
+           <?php
+            echo $speed2;
+           ?>
+           </span>
            
            <span id="physicalDescription2"></span>
            
-           <!--
-           <span id="weapons2"><span id="professionWeapon2"></span><span id="randomWeapon2"></span></span>
-		   
-           <span id="weaponDamage2"><span id="professionalWeaponDamage2"></span><span id="randomWeaponDamage2"><span id="randomWeaponDamageAdjustment"></span></span></span>-->
            
            <span id="equipment2"></span>
-           <!--<span id="tradeGood2"></span>-->
            
            <span id="armour2"></span>
            <span id="acBonus2"></span>
@@ -852,8 +1057,6 @@
             ?> 
             </span>
            
-           
-           <!--<p id="notes2"><span id="raceAbility2"></span><span id="animal2"></span><span id="farmAnimal2"></span></p>-->
            
 		</aside>
        
@@ -958,22 +1161,62 @@
         ?>
         </p>
         
-        <p id="armourClass3"> <span id="modifiedAC3"></span>(<span id="baseAC3"></span>)</p>
+        <p id="armourClass3"> 
+        <?php
+            echo $armourClass3;
+            ?>
+           </p>
            
 
-		<span id="hitPoints3"></span> 
+		<span id="hitPoints3">
+        <?php
+            echo $hitPoints3;
+        ?>
+        </span> 
            
         <span id="ref3"></span>
         <span id="fort3"></span>
         <span id="will3"></span>
 		   
-        <span id="init3"></span>
-		<span id="melee3"></span>
-        <span id="range3"></span>
-		<span id="meleeDamage3"></span>
-		 <span id="rangeDamage3"></span>
+        <span id="init3">
+        <?php
+            $init3 = getModSign($init3);
+            echo $init3;
+            ?>
+        </span>
+
+		<span id="melee3">
+        <?php
+        $meleeHit3 = getModSign($meleeHit3);
+        echo $meleeHit3;
+        ?>
+        </span>
+        <span id="range3">
+        <?php
+        $missileHit3 = getModSign($missileHit3);
+        echo $missileHit3;
+        ?>
+        </span>
+		<span id="meleeDamage3">
+        <?php
+        $meleeDam3 = getModSign($meleeDam3);
+        echo $meleeDam3;
+        ?>
+        </span>
+		 <span id="rangeDamage3">
+        <?php
+        $missileDam3 = getModSign($missileDam3);
+        echo $missileDam3;
+        ?>
+         </span>
            
-        <span id="fumbleDie3"></span>
+        <span id="fumbleDie3">
+        <?php
+        
+            $fumbleMod3 = getModSign($fumbleMod3);
+            echo 'd4' . $fumbleMod3;
+        ?>
+        </span>
            
         <span id="sex3">
            
@@ -1016,24 +1259,28 @@
             ?>
         </span>
            
-		<span id="critDie3"></span>
+           
+		<span id="critDie3">
+        <?php
+            $critMod3 = getModSign($critMod3);
+            echo 'd4' . $critMod3 . ' / I';  
+        ?>
+        </span>
                       
            <span id="wealth3"></span>
            
            <span id="languages3"><span id="baseLanguage3"></span><span id="addLanguages3"></span></span>
 		 
-           <span id="speed3"></span>
+           <span id="speed3">
+           <?php
+            echo $speed3;
+           ?>
+           </span>
            
            <span id="physicalDescription3"></span>
 
-           <!--
-           
-           <span id="weapons3"><span id="professionWeapon3"></span><span id="randomWeapon3"></span></span>
-		   
-           <span id="weaponDamage3"><span id="professionalWeaponDamage3"></span><span id="randomWeaponDamage3"><span id="randomWeaponDamageAdjustment"></span></span></span>-->
            
            <span id="equipment3"></span>
-           <!--<span id="tradeGood3"></span>-->
            
            <span id="armour3"></span>
            <span id="acBonus3"></span>
@@ -1047,7 +1294,6 @@
             </span>
            
            
-           <!--<p id="notes3"><span id="raceAbility3"></span><span id="animal3"></span><span id="farmAnimal3"></span></p>-->
 
            <span id="damageBonus3"></span>
            	   

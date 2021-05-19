@@ -52,6 +52,108 @@ function getBirthAugur()
 
 }
 
+function getSpeed($luckMod, $luckySign)
+{
+        $speedBonus = (5 * $luckMod);
+        $baseSpeed = 30;
+
+        if($luckySign == 29)
+        {
+               $baseSpeed += $speedBonus; 
+        }
+
+        return $baseSpeed . '\'';
+}
+
+function getCritMod($luckMod, $luckySign)
+{
+        $modBonus = (2 * $luckMod);
+        $bonus = $luckMod;
+
+        if($luckySign == 25)
+        {
+                $bonus = $modBonus;
+        }
+
+        if($bonus == 0)
+        {
+                $bonus = '';
+        }
+
+        return $bonus;
+
+}
+
+function getFumbleMod($luckMod, $luckySign)
+{
+        $modBonus = (2 * $luckMod);
+        $bonus = $luckMod;
+
+        if($luckySign == 27)
+        {
+                $bonus = $modBonus;
+        }
+
+        if($bonus == 0)
+        {
+                $bonus = '';
+        }
+
+        return $bonus;
+
+}
+
+
+function getInit($agiMod, $luckMod, $luckySign)
+{
+        $modBonus = $luckMod;
+        $bonus = $agiMod;
+
+        if($luckySign == 23)
+        {
+                $bonus += $modBonus;
+        }
+
+        return $bonus;
+
+}
+
+function getAC($agiMod, $luckMod, $luckySign)
+{
+        $modBonus = $luckMod;
+        $bonus = (10 + $agiMod);
+
+        if($luckySign == 22)
+        {
+                $bonus += $modBonus;
+        }
+
+        return $bonus;
+
+}
+
+function getHitPointLuck($luckMod, $luckySign)
+{
+        $bonus = 0;
+
+        if($luckySign == 24)
+        {
+                $bonus += $luckMod;
+        }
+
+        return $bonus;
+}
+
+function minHitPoints($hp)
+{
+        if($hp <= 0)
+        {
+                $hp = 1;
+        }
+
+        return $hp;
+}
+
 
 
 ?>
