@@ -154,6 +154,43 @@ function minHitPoints($hp)
         return $hp;
 }
 
+function getRefLuckBonus($luckMod, $luckySign)
+{
+        $bonus = 0;
 
+        if($luckySign == 16 || $luckySign == 19)
+        {
+                $bonus += $luckMod;
+        }
+
+        return $bonus;
+
+}
+
+
+function getFortLuckBonus($luckMod, $luckySign)
+{
+        $bonus = 0;
+
+        if($luckySign == 16 || $luckySign == 20)
+        {
+                $bonus += $luckMod;
+        }
+
+        return $bonus;
+}
+
+
+function getWillLuckBonus($luckMod, $luckySign)
+{
+        $bonus = 0;
+
+        if($luckySign == 16 || $luckySign == 21)
+        {
+                $bonus += $luckMod;
+        }
+
+        return $bonus;
+}
 
 ?>

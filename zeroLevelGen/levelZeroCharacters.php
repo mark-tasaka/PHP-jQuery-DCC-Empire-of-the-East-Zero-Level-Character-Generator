@@ -31,6 +31,7 @@
     include 'php/zeroLvOccupation.php';
     include 'php/abilityScoreGen.php';
     include 'php/luckySign.php';
+    include 'php/wealth.php';
     
         
         if(isset($_POST["theSex"]))
@@ -332,6 +333,41 @@
         $hitPoints2 = minHitPoints($hitPoints2);
         $hitPoints3 = minHitPoints($hitPoints3);
 
+        $refLuckBonus0 = getRefLuckBonus($luckMod0, $birthAugurNo0);
+        $refLuckBonus1 = getRefLuckBonus($luckMod1, $birthAugurNo1);
+        $refLuckBonus2 = getRefLuckBonus($luckMod2, $birthAugurNo2);
+        $refLuckBonus3 = getRefLuckBonus($luckMod3, $birthAugurNo3);
+
+        $ref0 = $agilityMod0 + $refLuckBonus0;
+        $ref1 = $agilityMod1 + $refLuckBonus1;
+        $ref2 = $agilityMod2 + $refLuckBonus2;
+        $ref3 = $agilityMod3 + $refLuckBonus3;
+
+        $fortLuckBonus0 = getFortLuckBonus($luckMod0, $birthAugurNo0);
+        $fortLuckBonus1 = getFortLuckBonus($luckMod1, $birthAugurNo1);
+        $fortLuckBonus2 = getFortLuckBonus($luckMod2, $birthAugurNo2);
+        $fortLuckBonus3 = getFortLuckBonus($luckMod3, $birthAugurNo3);
+
+        $fort0 = $staminaMod0 + $fortLuckBonus0;
+        $fort1 = $staminaMod1 + $fortLuckBonus1;
+        $fort2 = $staminaMod2 + $fortLuckBonus2;
+        $fort3 = $staminaMod3 + $fortLuckBonus3;
+        
+        $willLuckBonus0 = getWillLuckBonus($luckMod0, $birthAugurNo0);
+        $willLuckBonus1 = getWillLuckBonus($luckMod1, $birthAugurNo1);
+        $willLuckBonus2 = getWillLuckBonus($luckMod2, $birthAugurNo2);
+        $willLuckBonus3 = getWillLuckBonus($luckMod3, $birthAugurNo3);
+
+        $will0 = $personalityMod0 + $willLuckBonus0;
+        $will1 = $personalityMod1 + $willLuckBonus1;
+        $will2 = $personalityMod2 + $willLuckBonus2;
+        $will3 = $personalityMod3 + $willLuckBonus3;
+
+        $wealth0 = getStartingWealth();
+        $wealth1 = getStartingWealth();
+        $wealth2 = getStartingWealth();
+        $wealth3 = getStartingWealth();
+
 
 
 
@@ -459,9 +495,26 @@
         ?>
         </span> 
            
-        <span id="ref0"></span>
-        <span id="fort0"></span>
-        <span id="will0"></span>
+        <span id="ref0">
+        <?php
+            $ref0 = getModSign($ref0);
+            echo $ref0;
+            ?>
+            </span>
+
+        <span id="fort0">
+        <?php
+            $fort0 = getModSign($fort0);
+            echo $fort0;
+            ?>
+            </span>
+
+        <span id="will0">
+        <?php
+            $will0 = getModSign($will0);
+            echo $will0;
+            ?>
+            </span>
 		   
         <span id="init0">
         <?php
@@ -552,7 +605,11 @@
         ?>
         </span>
            
-           <span id="wealth0"></span>
+           <span id="wealth0">
+           <?php
+            echo $wealth0 . ' cp';
+            ?>
+           </span>
            
            <span id="languages0"><span id="baseLanguage0"></span><span id="addLanguages0"></span></span>
 		 
@@ -697,9 +754,28 @@
         ?>
         </span> 
            
-        <span id="ref1"></span>
-        <span id="fort1"></span>
-        <span id="will1"></span>
+        <span id="ref1">
+        <?php
+            $ref1 = getModSign($ref1);
+            echo $ref1;
+            ?>
+            </span>
+
+
+            <span id="fort1">
+        <?php
+            $fort1 = getModSign($fort1);
+            echo $fort1;
+            ?>
+            </span>
+
+
+            <span id="will1">
+        <?php
+            $will1 = getModSign($will1);
+            echo $will1;
+            ?>
+            </span>
 		   
         <span id="init1">
         <?php
@@ -791,7 +867,11 @@
         </span>
            
                       
-           <span id="wealth1"></span>
+           <span id="wealth1">
+           <?php
+            echo $wealth1 . ' cp';
+            ?>
+           </span>
            
            <span id="languages1"><span id="baseLanguage1"></span><span id="addLanguages1"></span></span>
 		 
@@ -937,9 +1017,26 @@
         ?>
         </span> 
            
-        <span id="ref2"></span>
-        <span id="fort2"></span>
-        <span id="will2"></span>
+        <span id="ref2">
+        <?php
+            $ref2 = getModSign($ref2);
+            echo $ref2;
+            ?>
+            </span>
+        <span id="fort2">
+        <?php
+            $fort2 = getModSign($fort2);
+            echo $fort2;
+            ?>
+            </span>
+
+
+            <span id="will2">
+        <?php
+            $will2 = getModSign($will2);
+            echo $will2;
+            ?>
+            </span>
 		   
         <span id="init2">
         <?php
@@ -1031,7 +1128,11 @@
         </span>
            
                       
-           <span id="wealth2"></span>
+           <span id="wealth2">
+           <?php
+            echo $wealth2 . ' cp';
+            ?>
+           </span>
            
            <span id="languages2"><span id="baseLanguage2"></span><span id="addLanguages2"></span></span>
 		 
@@ -1174,9 +1275,28 @@
         ?>
         </span> 
            
-        <span id="ref3"></span>
-        <span id="fort3"></span>
-        <span id="will3"></span>
+        <span id="ref3">
+        <?php
+            $ref3 = getModSign($ref3);
+            echo $ref3;
+            ?>
+            </span>
+
+            
+        <span id="fort3">
+        <?php
+            $fort3 = getModSign($fort3);
+            echo $fort3;
+            ?>
+            </span>
+
+
+            <span id="will3">
+        <?php
+            $will3 = getModSign($will3);
+            echo $will3;
+            ?>
+            </span>
 		   
         <span id="init3">
         <?php
@@ -1267,7 +1387,11 @@
         ?>
         </span>
                       
-           <span id="wealth3"></span>
+           <span id="wealth3">
+           <?php
+            echo $wealth3 . ' cp';
+            ?>
+           </span>
            
            <span id="languages3"><span id="baseLanguage3"></span><span id="addLanguages3"></span></span>
 		 
