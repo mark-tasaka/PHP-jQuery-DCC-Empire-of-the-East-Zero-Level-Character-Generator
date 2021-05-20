@@ -11,7 +11,7 @@ function getOccupation($input)
         $a04 = array("Brewer", "Wooden ladle (as club)", "d4", "Wicked ale (gal)", "");
         $a05 = array("Butcher", "Cleaver (as axe)", "d6", "Side of meat", "");
         $a06 = array("Carpenter", "Handsaw (as dagger)", "d4", "3 planks of wood", "20 nails");
-        $a07 = array("Cartwright", "Wheel spoke (as club)", "d4", "Hand-drawn cart*", "");
+        $a07 = array("Cartwright", "Wheel spoke (as club)", "d4", "Hand-drawn cart", "");
         $a08 = array("Chandler", "Candle holder (as club)", "d4", "Small iron melting pot", "10 candles");
         $a09 = array("Cordwainer", "Hole punch (as dagger)", "d4", "4’ of rolled leather", "extra pair of boots");
         $a10 = array("Cooper", "Barrel stave (as club)", "d4", "1 empty oak barrel", "");
@@ -20,7 +20,7 @@ function getOccupation($input)
         $a12 = array("Draper", "Scissors (as dagger)", "d4", "1 bolt of velvet cloth", "");
         $a13 = array("Falconer", "Sling", "d4", "Hunting bird-beast", "padded glove");
         //26-47 Farmer
-        $a14 = array("Farmer", "Hoe (as club)", "d4", "Small bird-beast**", "");
+        $a14 = array("Farmer", "Hoe (as club)", "d4", "Small bird-beast", "");
         $a15 = array("Fishmonger", "Spiny fish (as 1d4 flail)", "d4", "6 fish", "large net");
         $a16 = array("Furrier", "Skinning knife (as dagger)", "d4", "1 large beast pelt", "");
         $a17 = array("Goldsmith", "Cudgel", "d4", "1 oz. gold dust", "scales");
@@ -278,6 +278,24 @@ function getOccupationArray($input)
 }
 
 
+
+function getBird()
+{
+        $bird = array(" (wool-beast)", " (load-beast)", " (aquatic bird-beast)", " (small meat-beast)", " (load-beast)", " (small riding-beast)");
+
+        shuffle($bird);
+
+        return $bird[0];
+}
+
+function getCartContents()
+{
+        $contents = array(" (containing a hay bale)", " (containing a tobacco stick bundle)", " (containing 20 ears of corn)", " (containing 1 bushel of chicken eggs)", " (containing compost)", " (containing your aged mother)");
+
+        shuffle($contents);
+
+        return $contents[0];
+}
 
 
 ?>

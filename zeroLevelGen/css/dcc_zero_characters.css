@@ -67,6 +67,7 @@ Character 1
     position: absolute;
     top: 68px;
     left: 320px;
+    width: 90px;
 }
 
 
@@ -365,6 +366,7 @@ Character 1
     top: 365px;
     left:  225px;
 	font-size: 0.8em;
+    width: 240px;
 }
 
 

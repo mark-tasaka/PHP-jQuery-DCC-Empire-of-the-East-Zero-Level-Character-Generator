@@ -28,6 +28,19 @@ function getAlignment ($option)
     {
         $alignment = "Chaotic";
     }
+    else if($option == 5)
+    {
+        $alignChoice = array(
+            "The Clan of Cog",
+            "The Curators",
+            "The Atomic Equinox",
+            "The Holy Med Order"
+        );
+        
+        $selectAlign = rand (0, 3);
+        
+        $alignment = $alignChoice[$selectAlign];
+    }
     else
     {
         $alignment = "";

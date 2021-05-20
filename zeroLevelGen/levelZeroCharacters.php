@@ -13,7 +13,6 @@
 
 	<link rel="stylesheet" type="text/css" href="css/dcc_zero_characters.css">
     
-   <script type="text/javascript" src="js/adjustments.js"></script>
     
     
 </head>
@@ -32,6 +31,7 @@
     include 'php/abilityScoreGen.php';
     include 'php/luckySign.php';
     include 'php/wealth.php';
+    include 'php/equipment.php';
     
         
         if(isset($_POST["theSex"]))
@@ -207,6 +207,14 @@
             $hitPoints3 = 4;
         }
 
+        
+        if(isset($_POST["theStartingEquip"]))
+        {
+            $startingEquipment = $_POST["theStartingEquip"];
+        
+        }
+
+
         $professionNum0 = getOccupationNumber(); 
         $professionNum1 = getOccupationNumber(); 
         $professionNum2 = getOccupationNumber(); 
@@ -263,25 +271,45 @@
         $birthAugurRoll2 = $birthAugur2[2];
         $birthAugurRoll3 = $birthAugur3[2];
 
-        $meleeHit0 = $strengthMod0;
-        $meleeHit1 = $strengthMod1;
-        $meleeHit2 = $strengthMod2;
-        $meleeHit3 = $strengthMod3;
+        $luckySignMeleeHit0 = meleeAttackLuckSign($luckMod0, $birthAugurNo0);
+        $luckySignMeleeHit1 = meleeAttackLuckSign($luckMod1, $birthAugurNo1);
+        $luckySignMeleeHit2 = meleeAttackLuckSign($luckMod2, $birthAugurNo2);
+        $luckySignMeleeHit3 = meleeAttackLuckSign($luckMod3, $birthAugurNo3);
 
-        $meleeDam0 = $strengthMod0;
-        $meleeDam1 = $strengthMod1;
-        $meleeDam2 = $strengthMod2;
-        $meleeDam3 = $strengthMod3;
+        $meleeHit0 = $strengthMod0 + $luckySignMeleeHit0;
+        $meleeHit1 = $strengthMod1 + $luckySignMeleeHit1;
+        $meleeHit2 = $strengthMod2 + $luckySignMeleeHit2;
+        $meleeHit3 = $strengthMod3 + $luckySignMeleeHit3;
+        
+        $luckySignMeleeDamage0 = meleeDamageLuckSign($luckMod0, $birthAugurNo0);
+        $luckySignMeleeDamage1 = meleeDamageLuckSign($luckMod1, $birthAugurNo1);
+        $luckySignMeleeDamage2 = meleeDamageLuckSign($luckMod2, $birthAugurNo2);
+        $luckySignMeleeDamage3 = meleeDamageLuckSign($luckMod3, $birthAugurNo3);
 
-        $missileHit0 = $agilityMod0;
-        $missileHit1 = $agilityMod1;
-        $missileHit2 = $agilityMod2;
-        $missileHit3 = $agilityMod3;
+        $meleeDam0 = $strengthMod0 + $luckySignMeleeDamage0;
+        $meleeDam1 = $strengthMod1 + $luckySignMeleeDamage1;
+        $meleeDam2 = $strengthMod2 + $luckySignMeleeDamage2;
+        $meleeDam3 = $strengthMod3 + $luckySignMeleeDamage3;
 
-        $missileDam0 = $agilityMod0;
-        $missileDam1 = $agilityMod1;
-        $missileDam2 = $agilityMod2;
-        $missileDam3 = $agilityMod3;
+        $luckySignMissileHit0 = missileAttackLuckSign($luckMod0, $birthAugurNo0);
+        $luckySignMissileHit1 = missileAttackLuckSign($luckMod1, $birthAugurNo1);
+        $luckySignMissileHit2 = missileAttackLuckSign($luckMod2, $birthAugurNo2);
+        $luckySignMissileHit3 = missileAttackLuckSign($luckMod3, $birthAugurNo3);
+
+        $missileHit0 = $agilityMod0 + $luckySignMissileHit0;
+        $missileHit1 = $agilityMod1 + $luckySignMissileHit1;
+        $missileHit2 = $agilityMod2 + $luckySignMissileHit2;
+        $missileHit3 = $agilityMod3 + $luckySignMissileHit3;
+        
+        $luckySignMissileDamage0 = missileDamageLuckSign($luckMod0, $birthAugurNo0);
+        $luckySignMissileDamage1 = missileDamageLuckSign($luckMod1, $birthAugurNo1);
+        $luckySignMissileDamage2 = missileDamageLuckSign($luckMod2, $birthAugurNo2);
+        $luckySignMissileDamage3 = missileDamageLuckSign($luckMod3, $birthAugurNo3);
+
+        $missileDam0 = $agilityMod0 + $luckySignMissileDamage0;
+        $missileDam1 = $agilityMod1 + $luckySignMissileDamage1;
+        $missileDam2 = $agilityMod2 + $luckySignMissileDamage2;
+        $missileDam3 = $agilityMod3 + $luckySignMissileDamage3;
 
         $init0 = getInit($agilityMod0, $luckMod0, $birthAugurNo0);
         $init1 = getInit($agilityMod1, $luckMod1, $birthAugurNo1);
@@ -368,16 +396,119 @@
         $wealth2 = getStartingWealth();
         $wealth3 = getStartingWealth();
 
+        $languages0 = getLanguages($intelligenceMod0, $luckMod0, $birthAugurNo0);
+        $languages1 = getLanguages($intelligenceMod1, $luckMod1, $birthAugurNo1);
+        $languages2 = getLanguages($intelligenceMod2, $luckMod2, $birthAugurNo2);
+        $languages3 = getLanguages($intelligenceMod3, $luckMod3, $birthAugurNo3);
 
+        $equipment0 = array();
+        $equipment1 = array();
+        $equipment2 = array();
+        $equipment3 = array();
+
+        array_push($equipment0, $occupationArray0[3]);
+        array_push($equipment1, $occupationArray1[3]);
+        array_push($equipment2, $occupationArray2[3]);
+        array_push($equipment3, $occupationArray3[3]);
+
+        
+        if($profession0 == "Cartwright")
+        {
+            $cartContents0 = getcartContents();
+            array_push($equipment0, $cartContents0);
+        }
+        
+        if($profession1 == "Cartwright")
+        {
+            $cartContents1 = getcartContents();
+            array_push($equipment1, $cartContents1);
+        }
+        
+        if($profession2 == "Cartwright")
+        {
+            $cartContents2 = getcartContents();
+            array_push($equipment2, $cartContents2);
+        }
+        
+        if($profession3 == "Cartwright")
+        {
+            $cartContents3 = getcartContents();
+            array_push($equipment3, $cartContents3);
+        }
+
+        if($profession0 == "Farmer")
+        {
+            $bird0 = getBird();
+            array_push($equipment0, $bird0);
+        }
+        
+        if($profession1 == "Farmer")
+        {
+            $bird1 = getBird();
+            array_push($equipment1, $bird1);
+        }
+        
+        if($profession2 == "Farmer")
+        {
+            $bird2 = getBird();
+            array_push($equipment2, $bird2);
+        }
+        
+        if($profession3 == "Farmer")
+        {
+            $bird3 = getBird();
+            array_push($equipment3, $bird3);
+        }
+
+        if($occupationArray0[4] != '')
+        {
+            array_push($equipment0, ', ');
+            array_push($equipment0, $occupationArray0[4]);
+        }
+
+        if($occupationArray1[4] != '')
+        {
+            array_push($equipment1, ', ');
+            array_push($equipment1, $occupationArray1[4]);
+        }
+
+        if($occupationArray2[4] != '')
+        {
+            array_push($equipment2, ', ');
+            array_push($equipment2, $occupationArray2[4]);
+        }
+
+        if($occupationArray3[4] != '')
+        {
+            array_push($equipment3, ', ');
+            array_push($equipment3, $occupationArray3[4]);
+        }
+
+        if($startingEquipment == 1)
+        {
+            $randomStartingEquip0 = getRandomEquipment();
+            $randomStartingEquip1 = getRandomEquipment();
+            $randomStartingEquip2 = getRandomEquipment();
+            $randomStartingEquip3 = getRandomEquipment();
+            
+            array_push($equipment0, ' & ');
+            array_push($equipment0, $randomStartingEquip0);
+            
+            array_push($equipment1, ' & ');
+            array_push($equipment1, $randomStartingEquip1);
+            
+            array_push($equipment2, ' & ');
+            array_push($equipment2, $randomStartingEquip2);
+            
+            array_push($equipment3, ' & ');
+            array_push($equipment3, $randomStartingEquip3);
+        }
 
 
     ?>
 
     
     
-    
-<!--Version 3: JQuery  -->
-	
 
   <img id="character_sheet"/>
    <section>
@@ -611,7 +742,11 @@
             ?>
            </span>
            
-           <span id="languages0"><span id="baseLanguage0"></span><span id="addLanguages0"></span></span>
+           <span id="languages0">
+           <?php
+            echo $languages0;
+           ?>
+           </span>
 		 
            <span id="speed0">
            <?php
@@ -619,14 +754,18 @@
            ?>
            </span>
            
-           <span id="physicalDescription0"></span>
            
 
-           <span id="equipment0"></span>
+           <span id="equipment0">
+           <?php
+           foreach($equipment0 as $equip)
+           {
+               echo $equip;
+
+           }
+           ?>
+           </span>
            
-           <span id="armour0"></span>
-           <span id="acBonus0"></span>
-           <span id="armourFumble0"></span>
 		   <span id="dieRollMethod0"> 
            <?php
             
@@ -873,20 +1012,29 @@
             ?>
            </span>
            
-           <span id="languages1"><span id="baseLanguage1"></span><span id="addLanguages1"></span></span>
-		 
+           <span id="languages1">
+           <?php
+            echo $languages1;
+           ?>
+           </span>
+
+
            <span id="speed1">
            <?php
             echo $speed1;
            ?>
            </span>
            
-           <span id="physicalDescription1"></span>
-           <span id="equipment1"></span>
-           
-           <span id="armour1"></span>
-           <span id="acBonus1"></span>
-           <span id="armourFumble1"></span>
+           <span id="equipment1">
+           <?php
+           foreach($equipment1 as $equip)
+           {
+               echo $equip;
+
+           }
+           ?>
+           </span>
+
            <span id="dieRollMethod1">
            <?php
             
@@ -1134,22 +1282,30 @@
             ?>
            </span>
            
-           <span id="languages2"><span id="baseLanguage2"></span><span id="addLanguages2"></span></span>
-		 
+           <span id="languages2">
+           <?php
+            echo $languages2;
+           ?>
+           </span>
+
            <span id="speed2">
            <?php
             echo $speed2;
            ?>
            </span>
            
-           <span id="physicalDescription2"></span>
            
            
-           <span id="equipment2"></span>
+           <span id="equipment2">
+           <?php
+           foreach($equipment2 as $equip)
+           {
+               echo $equip;
+
+           }
+           ?>
+           </span>
            
-           <span id="armour2"></span>
-           <span id="acBonus2"></span>
-           <span id="armourFumble2"></span>
            <span id="dieRollMethod2">
            <?php
             
@@ -1393,7 +1549,11 @@
             ?>
            </span>
            
-           <span id="languages3"><span id="baseLanguage3"></span><span id="addLanguages3"></span></span>
+           <span id="languages3">
+           <?php
+            echo $languages3;
+           ?>
+           </span>
 		 
            <span id="speed3">
            <?php
@@ -1401,14 +1561,17 @@
            ?>
            </span>
            
-           <span id="physicalDescription3"></span>
+           
+           <span id="equipment3">
+           <?php
+           foreach($equipment3 as $equip)
+           {
+               echo $equip;
 
+           }
+           ?>
+           </span>
            
-           <span id="equipment3"></span>
-           
-           <span id="armour3"></span>
-           <span id="acBonus3"></span>
-           <span id="armourFumble3"></span>
            <span id="dieRollMethod3">
            <?php
             

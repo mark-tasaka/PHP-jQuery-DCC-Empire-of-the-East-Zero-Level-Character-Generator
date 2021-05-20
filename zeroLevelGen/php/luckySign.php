@@ -193,4 +193,90 @@ function getWillLuckBonus($luckMod, $luckySign)
         return $bonus;
 }
 
+function getLanguages($intMod, $luckMod, $luckySign)
+{
+        $language = 'Common';
+        $bonusLanguages = 0;
+
+        if($intMod > 0)
+        {
+                $bonusLanguages += $intMod;
+        }
+
+        if($luckySign == 28 && $luckMod > 0)
+        {
+                $bonusLanguages += $luckMod;
+        }
+
+        if($bonusLanguages === 1)
+        {
+                return $language . ' & ' . $bonusLanguages . ' additional language';
+        }
+        else if($bonusLanguages > 1)
+        {
+                return $language . ' & ' . $bonusLanguages . ' additional languages';
+        }
+        else
+        {
+                return $language;
+        }
+
+}
+
+
+function meleeAttackLuckSign($luckMod, $luckySign)
+{
+        $bonus = 0;
+
+        if($luckySign == 0 || $luckySign == 1)
+        {
+                $bonus += $luckMod;
+        }
+
+        return $bonus;
+}
+
+
+function missileAttackLuckSign($luckMod, $luckySign)
+{
+        $bonus = 0;
+
+        if($luckySign == 0 || $luckySign == 2)
+        {
+                $bonus += $luckMod;
+        }
+
+        return $bonus;
+}
+
+
+function meleeDamageLuckSign($luckMod, $luckySign)
+{
+        $bonus = 0;
+
+        if($luckySign == 5 || $luckySign == 6)
+        {
+                $bonus += $luckMod;
+        }
+
+        return $bonus;
+}
+
+
+function missileDamageLuckSign($luckMod, $luckySign)
+{
+        $bonus = 0;
+
+        if($luckySign == 5 || $luckySign == 7)
+        {
+                $bonus += $luckMod;
+        }
+
+        return $bonus;
+}
+
+
+
+
+
 ?>
