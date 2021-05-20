@@ -3,6 +3,11 @@ The Dungeon Crawl Classics Empire of the East Zero Level Character Generator has
 
 
 
+Update 1.06: 2021-05-20
+
+Deleted adjustments.js and js folder.  Created equipment.php and wealth.php files.  Updated levelZeroCharacter.php, alignment.php, luckySign.php and dcc_zero_character.css.
+
+
 Update 1.05: 2021-05-19
 
 New file, wealth.php, added.  Updates levelZeroCharacter.php and luckySign.php.
