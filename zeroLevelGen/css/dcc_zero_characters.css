@@ -80,79 +80,79 @@ Character 1
 #languages0, #languages1, #languages2, #languages3{
     position: absolute;
     top: 575px;
-    left: 55px;
+    left: 75px;
     font-size: 0.8em;
-    width: 120px;
+    width: 140px;
 }
 
 
 
 #strength0, #strength1, #strength2, #strength3{
     position:absolute;
-    top: 270px;
-    left: 120px;
+    top: 325px;
+    left: 125px;
 	font-size: 1.3em;
 }
 
 #strengthMod0, #strengthMod1, #strengthMod2, #strengthMod3{
     position:absolute;
-    top: 270px;
+    top: 325px;
     left: 160px;
 	font-size: 1.3em;
 }
 
 #agility0, #agility1, #agility2, #agility3{
     position:absolute;
-    top: 294px;
-    left: 120px;
+    top: 345px;
+    left: 125px;
 	font-size: 1.3em;
 }
 
 #agilityMod0, #agilityMod1, #agilityMod2, #agilityMod3{
     position:absolute;
-    top: 294px;
+    top: 345px;
     left: 160px;
 	font-size: 1.3em;
 }
 
 #stamina0, #stamina1, #stamina2, #stamina3{
     position:absolute;
-    top: 320px;
-    left: 120px;
+    top: 369px;
+    left: 125px;
 	font-size: 1.3em;
 }
 
 #staminaMod0, #staminaMod1, #staminaMod2, #staminaMod3{
     position:absolute;
-    top: 320px;
+    top: 369px;
     left: 160px;
 	font-size: 1.3em;
 }
 
 #personality0, #personality1, #personality2, #personality3{
     position:absolute;
-    top: 348px;
-    left: 120px;
+    top: 396px;
+    left: 125px;
 	font-size: 1.3em;
 }
 
 #personalityMod0, #personalityMod1, #personalityMod2, #personalityMod3{
     position:absolute;
-    top: 348px;
+    top: 396px;
     left: 160px;
 	font-size: 1.3em;
 }
 
 #intelligence0, #intelligence1, #intelligence2, #intelligence3{
     position:absolute;
-    top: 375px;
-    left: 120px;
+    top: 423px;
+    left: 125px;
 	font-size: 1.3em;
 }
 
 #intelligenceMod0, #intelligenceMod1, #intelligenceMod2, #intelligenceMod3{
     position:absolute;
-    top: 375px;
+    top: 423px;
     left: 160px;
 	font-size: 1.3em;
 }
@@ -161,14 +161,14 @@ Character 1
 
 #luck0, #luck1, #luck2, #luck3{
     position:absolute;
-    top: 403px;
-    left: 120px;
+    top: 450px;
+    left: 125px;
 	font-size: 1.3em;
 }
 
 #luckMod0, #luckMod1, #luckMod2, #luckMod3{
     position:absolute;
-    top: 403px;
+    top: 450px;
     left: 160px;
 	font-size: 1.3em;
 }
@@ -176,16 +176,16 @@ Character 1
 
 #birthAugur0, #birthAugur1, #birthAugur2, #birthAugur3{
     position: absolute;
-    top: 160px;
+    top: 198px;
     left:  335px;
-	width: 120px;
+	width: 140px;
     font-size: 0.85em;
 }
 
 #wealth0, #wealth1, #wealth2, #wealth3{
     position: absolute;
-    top: 480px;
-    left:  65px;
+    top: 520px;
+    left:  95px;
     font-size: 0.85em;
 }
 
@@ -200,7 +200,7 @@ Character 1
 #hitPoints0, #hitPoints1, #hitPoints2, #hitPoints3{
 	position: absolute;
     top: 255px;
-    left: 90px;
+    left: 87px;
 	font-size: 1.2em;
 }
 
@@ -238,14 +238,14 @@ Character 1
 
 #init0, #init1, #init2, #init3{
     position: absolute;
-    top: 155px;
+    top: 188px;
     left: 255px;
 	font-size: 1.1em;
 }
 
 #melee0, #melee1, #melee2, #melee3{
     position: absolute;
-    top: 188px;
+    top: 221px;
     left: 240px;
 	font-size: 1.1em;
 }
@@ -253,14 +253,14 @@ Character 1
 
 #meleeDamage0, #meleeDamage1, #meleeDamage2, #meleeDamage3{
     position: absolute;
-    top: 188px;
+    top: 221px;
     left: 270px;
 	font-size: 1.1em;
 }
 
 #range0, #range1, #range2, #range3{
     position: absolute;
-    top: 210px;
+    top: 241px;
     left: 240px;
 	font-size: 1.1em;
 }
@@ -268,7 +268,7 @@ Character 1
 
 #rangeDamage0, #rangeDamage1, #rangeDamage2, #rangeDamage3{
     position: absolute;
-    top: 210px;
+    top: 241px;
     left: 270px;
 	font-size: 1.1em;
 }
@@ -324,23 +324,22 @@ Character 1
 
 #weapon0, #weapon1, #weapon2, #weapon3{
     position: absolute;
-    top: 280px;
-    left:  230px;
+    top: 325px;
+    left:  220px;
 	font-size: 0.8em;
-    width: 150px;
 }
 
 #weaponDamage0, #weaponDamage1, #weaponDamage2, #weaponDamage3{
     position: absolute;
-    top: 280px;
-    left:  400px;
+    top: 325px;
+    left:  410px;
 	font-size: 0.8em;
 }
 
 
 #armour0, #armour1, #armour2, #armour3{
     position: absolute;
-    top: 320px;
+    top: 369px;
     left:  225px;
 	font-size: 0.8em;
 }
@@ -362,8 +361,8 @@ Character 1
 
 #equipment0, #equipment1, #equipment2, #equipment3{
     position: absolute;
-    top: 365px;
-    left:  225px;
+    top: 425px;
+    left:  220px;
 	font-size: 0.8em;
     width: 240px;
 }
@@ -380,8 +379,8 @@ Character 1
 
 #dieRollMethod0, #dieRollMethod1, #dieRollMethod2, #dieRollMethod3{
     position: absolute;
-    top: 592px;
-    left:  208px;
+    top: 580px;
+    left:  228px;
 	font-size: 0.6em;
 }
 
