@@ -51,29 +51,28 @@ Character 1
 
 #name0, #name1, #name2, #name3{
     position: absolute;
-    top: 68px;
-    left: 55px;
+    top: 72px;
+    left: 45px;
 }
 
 
 #profession0, #profession1, #profession2, #profession3{
     position: absolute;
-    top: 113px;
-    left: 55px;
+    top: 108px;
+    left: 45px;
 }
 
 
 #alignment0, #alignment1, #alignment2, #alignment3{
     position: absolute;
-    top: 68px;
-    left: 320px;
-    width: 90px;
+    top: 145px;
+    left: 45px;
 }
 
 
 #sex0, #sex1, #sex2, #sex3{
     position: absolute;
-    top: 68px;
+    top: 72px;
     left: 245px;
 }
 
@@ -193,14 +192,14 @@ Character 1
 
 #armourClass0, #armourClass1, #armourClass2, #armourClass3{
 	position: absolute;
-    top: 130px;
-    left: 88px;
-	font-size: 1.2em;
+    top: 181px;
+    left: 93px;
+	font-size: 1.5em;
 }
 
 #hitPoints0, #hitPoints1, #hitPoints2, #hitPoints3{
 	position: absolute;
-    top: 202px;
+    top: 255px;
     left: 90px;
 	font-size: 1.2em;
 }
@@ -208,22 +207,22 @@ Character 1
 
 #ref0, #ref1, #ref2, #ref3{
     position: absolute;
-    top: 48px;
-    left: 395px;
+    top: 68px;
+    left: 400px;
 	font-size: 1.3em;
 }
 
 #fort0, #fort1, #fort2, #fort3{
     position: absolute;
-    top: 48px;
-    left: 442px;
+    top: 68px;
+    left: 437px;
 	font-size: 1.3em;
 }
 
 #will0, #will1, #will2, #will3{
     position: absolute;
-    top: 103px;
-    left: 398px;
+    top: 116px;
+    left: 403px;
 	font-size: 1.3em;
 }
 
@@ -278,8 +277,8 @@ Character 1
 
 #speed0, #speed1, #speed2, #speed3{
     position: absolute;
-    top: 103px;
-    left: 445px;
+    top: 116px;
+    left: 435px;
 	font-size: 1.3em;
 }
 
@@ -299,8 +298,8 @@ Character 1
 
 #fumbleDie0, #fumbleDie1, #fumbleDie2, #fumbleDie3{
     position: absolute;
-    top: 113px;
-    left: 340px;
+    top: 108px;
+    left: 320px;
 	font-size: 1.2em;
 }
 
@@ -308,8 +307,8 @@ Character 1
 
 #critDie0, #critDie1, #critDie2, #critDie3{
     position: absolute;
-    top: 113px;
-    left: 260px;
+    top: 108px;
+    left: 220px;
 	font-size: 1.2em;
 }
 
