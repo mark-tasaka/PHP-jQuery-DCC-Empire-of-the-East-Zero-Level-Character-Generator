@@ -89,14 +89,14 @@ Character 1
 
 #strength0, #strength1, #strength2, #strength3{
     position:absolute;
-    top: 325px;
+    top: 323px;
     left: 125px;
 	font-size: 1.3em;
 }
 
 #strengthMod0, #strengthMod1, #strengthMod2, #strengthMod3{
     position:absolute;
-    top: 325px;
+    top: 323px;
     left: 160px;
 	font-size: 1.3em;
 }
