@@ -1,6 +1,17 @@
 # PHP-jQuery-DCC-Empire-of-the-East-Zero-Level-Character-Generator
 The Dungeon Crawl Classics Empire of the East Zero Level Character Generator has been designed primarily with PHP and jQuery. Several of the jQuery/JavaScript functions are stored in external files, as a means of creating greater design efficiency, with the goal of writing a program with high cohesion and low coupling. In this way, this program simulates Object-Oriented design. JSON is used to store multi-column variables, with jQuery functions used to retrieve these variables.
 
+Live version of the Zero Level Character Generator:
+https://www.oldschooladventures.org/east/
+
+
+-----------
+
+Update 1.10: 2021-05-25
+
+Link to a live version of the DCC Empire of the East Zero-Level Character Generator added.
+
+
 
 Update 1.09: 2021-05-22
 
