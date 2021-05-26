@@ -7,6 +7,13 @@ https://www.oldschooladventures.org/east/
 
 -----------
 
+
+
+Update 1.11: 2021-05-26
+
+Updated dcc_zero_characters.css.
+
+
 Update 1.10: 2021-05-25
 
 Link to a live version of the DCC Empire of the East Zero-Level Character Generator added.
