@@ -13,15 +13,15 @@ function dieRollMethodText($choice)
         break;
 
         case 3:
-            return 'Ability Scores: Roll 2d6+6;';
+            return 'Ability Scores: Roll 5d6 (use the 3 highest);';
         break;
 
         case 4:
-            return 'Ability Scores: Roll 1d10+8;';
+            return 'Ability Scores: Roll 1d5 + 1d6 + 1d7;';
         break;
 
         case 5:
-            return 'Ability Scores: Roll 5d6 (use the 3 highest);';
+            return 'Ability Scores: Roll 2d6+6;';
         break;
 
         default:
