@@ -7,6 +7,9 @@ https://www.oldschooladventures.org/east/
 
 -----------
 
+Update 1.12: 2021-09-02
+
+Corrected minor 'bug' in code.
 
 
 Update 1.11: 2021-05-26
